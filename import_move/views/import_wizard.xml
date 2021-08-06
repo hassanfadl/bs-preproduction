@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="import_move_form_view" model="ir.ui.view">
+        <field name="name">import.move.form.view</field>
+        <field name="model">import.move</field>
+        <field name="arch" type="xml">
+            <form string="ModelTitle">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="excel_file"/>
+                        </group>
+                        <group/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Import" class="oe_highlight" type="object" name="load_invoice"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="import_move_act_window" model="ir.actions.act_window">
+        <field name="name">Import</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">import.move</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Import Invoice" id="import_move_menu" parent="sale.menu_sale_config"
+              action="import_move_act_window"/>
+
+</odoo>

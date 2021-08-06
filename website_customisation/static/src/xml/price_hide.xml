@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Recently Viewed Products Carousel -->
+    <t t-extend="website_sale.productsRecentlyViewed">
+        <t t-jquery="div.d-block" t-operation="replace"></t>
+    </t>
+</templates>

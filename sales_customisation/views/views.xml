@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_order_form_sales_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.abandoned.cart.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="website_sale.sale_order_view_form_cart_recovery"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_recovery_email_send']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_order_form_sales" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_quotation_send'][2]" position="replace">
+                <button name="action_quotation_send" type="object" string="Send PRO-FORMA Invoice"
+                        groups="sale.group_proforma_sales" class="btn-primary" invisible="1"/>
+            </xpath>
+            <xpath expr="//header/button[@name='action_quotation_send'][1]" position="replace">
+                <button name="action_quotation_send" string="Send by Email" type="object" states="draft"
+                        class="btn-primary" invisible="1"/>
+            </xpath>
+            <xpath expr="//header/button[@name='action_quotation_send'][3]" position="replace">
+                <button name="action_quotation_send" type="object" string="Send PRO-FORMA Invoice"
+                        groups="sale.group_proforma_sales"
+                        attrs="{'invisible': ['|', ('state', '=', 'draft'), ('invoice_count','&gt;=',1)]}"
+                        context="{'proforma': True}" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="after">
+                <field name="color_id" options="{'no_create': True}"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="after">
+                <field name="approved_price"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.from.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@name='action_confirm']" position="after">
+                <button name="button_approve" type="object" states='to approve' string="Approve Quotation"
+                        class="oe_highlight" groups="sales_team.group_sale_manager"/>
+            </xpath>
+            <xpath expr="//button[@name='button_approve']" position="after">
+                <button name="button_disapprove" type="object" states='to approve' string="Disapprove Quotation"
+                        class="oe_highlight" groups="sales_team.group_sale_manager"/>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/group[2]" position="after">
+                <group>
+                    <field name="remarks"/>
+                </group>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/group[2]" position="after">
+                <group string="Scheduled Request">
+                    <field name="x_studio_1_pre_production_sample_ready_1"/>
+                    <field name="x_studio_2_shipment_sample_ready"/>
+                    <field name="x_studio_3_finished_goods_ready"/>
+                </group>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='price_unit']"
+                   position="replace">
+                <field name="price_unit" attrs="{'readonly': [('state', 'in', ['draft', 'website'])]}"/>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                <div class="alert alert-danger" role="alert" style="margin-bottom:0px;"
+                     attrs="{'invisible': [('state', '!=', 'to approve')]}" groups="sales_team.group_sale_salesman">
+                    Unit Price for the Products should not be less than the selling price
+                </div>
+            </xpath>
+            <xpath expr="//button[@name='action_quotation_send']" position="after">
+                <button name="action_click"
+                        string="Quotation Confirm" type="object"
+                        attrs="{'invisible': [('state', 'not in', ['draft', 'website'])]}"
+                        groups="sales_team.group_sale_salesman,sales_team.group_sale_manager"/>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm']" position="replace">
+                <button name="action_confirm"
+                        string="SO Confirm" class="btn-primary" type="object"
+                        attrs="{'invisible': [('state', 'not in', ['sent'])]}"
+                        groups="sales_team.group_sale_salesman,sales_team.group_sale_manager"/>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm'][2]" position="attributes">
+                <attribute name="attrs"></attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="is_draft" invisible="1"/>
+            </xpath>
+
+        </field>
+    </record>
+    <record model='ir.ui.menu' id='purchase.menu_purchase_root'>
+        <field name="groups_id" eval="[(4,ref('purchase.group_purchase_manager'))]"/>
+    </record>
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <!--form-->
+    <record id="form_purchase_term_condition" model="ir.ui.view">
+        <field name="name">form.purchase.term.condition</field>
+        <field name="model">purchase.term.condition</field>
+        <field name="arch" type="xml">
+            <form string="Term Condition">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page string="Terms &amp; Condition">
+                            <field name="terms"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--tree-->
+    <record id="tree_purchase_term_condition" model="ir.ui.view">
+        <field name="name">tree.purchase.term.condition</field>
+        <field name="model">purchase.term.condition</field>
+        <field name="arch" type="xml">
+            <tree string="Term Condition">
+                <field name="name"/>
+                <field name="terms"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--search view-->
+    <record id="search_purchase_term_condition" model="ir.ui.view">
+        <field name="name">search.purchase.term.condition</field>
+        <field name="model">purchase.term.condition</field>
+        <field name="arch" type="xml">
+            <search string="Terms Condition Search">
+                <field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Action-->
+    <record id="action_purchase_term_condition" model="ir.actions.act_window">
+        <field name="name">Terms &amp; Conditions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">purchase.term.condition</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Menus-->
+    <menuitem name="Terms &amp; Conditions"
+              id='menu_purchase_term_condition'
+              parent="purchase.menu_purchase_config"
+              action="action_purchase_term_condition"
+              sequence="0"/>
+</odoo>

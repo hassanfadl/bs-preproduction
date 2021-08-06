@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--  Hide two factor authentication  -->
+    <template id="totp_portal_hook" inherit_id="auth_totp_portal.totp_portal_hook">
+        <xpath expr="//section[2]" position="replace">
+
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="cart" inherit_id="website_sale.cart">
+        <xpath expr="//div[hasclass('col-lg-12')]/a[2]" position="replace">
+            <a role="button" t-if="website_sale_order and website_sale_order.website_order_line"
+               class="btn btn-primary float-right d-none d-xl-inline-block" href="/shop/request_quotation/submit">
+                <span class="">Request For Quotation(RFQ)</span>
+                <span class="fa fa-chevron-right"/>
+            </a>
+        </xpath>
+    </template>
+</odoo>

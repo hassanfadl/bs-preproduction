@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="tolerence_checking_action" model="ir.actions.act_window">
+            <field name="name">Tolerence checking wizard</field>
+            <field name="res_model">tolerence.wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="tolerence_checking_wizard" model="ir.ui.view">
+            <field name="name">tolerence.checking.wizard</field>
+            <field name="model">tolerence.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <p invisible="context.get('tolerance_value') == False">The received quantity is below than the tolerance acceptance percentage.Do you want to continue?</p>
+                    <p invisible="context.get('tolerance_value') != False">The received quantity is above than the tolerance acceptance percentage.Do you want to continue?</p>
+                    <footer>
+                        <button string="Continue" type="object" name="continue_validate"/>
+                        <button string="No" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_view_merge_picking" model="ir.ui.view">
+            <field name="name">Merge Picking</field>
+            <field name="model">merge.picking</field>
+            <field name="arch" type="xml">
+                <form string="Merge Picking">
+                    <p class="oe_grey">
+                        Picking will be created with all the selected picking.
+                    </p>
+                    <group>
+                        <field name="pickings_ids" nolabel="1" colspan="4" width="550" height="300">
+                            <tree>
+                                <field name="name"/>
+                                <field name="partner_id"/>
+                                <field name="origin"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="merge_pickings" string="Merge Pickings" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+                name="Merge Picking"
+                binding_model="stock.picking"
+                res_model="merge.picking"
+                binding_views="list"
+                view_mode="form"
+                id="action_merge_invoice"
+                target="new"
+                view_id='action_view_merge_picking'
+
+        />
+    </data>
+</odoo>

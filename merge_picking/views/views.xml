@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <record id="stock_view_picking_form" model="ir.ui.view">
+            <field name="name">stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field eval="12" name="priority"/>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/button[@name='do_unreserve']" position="replace">
+                    <button name="do_unreserve" string="Update" help="It unreserves the quantity from the received one in case of urgent shipment." groups="base.group_user" type="object"
+                            attrs="{'invisible': ['|', '|', '|', ('picking_type_code', '=', 'incoming'), ('immediate_transfer', '=', True), '&amp;', ('state', 'not in', ('assigned', 'partially_available')), ('move_type', '!=', 'one'), '&amp;', ('state', 'not in', ('assigned', 'partially_available', 'confirmed')), ('move_type', '=', 'one')]}"/>
+                </xpath>
+                <xpath expr="//form/header/button[@name='action_assign']" position="replace">
+                    <button name="action_assign" help="Checks the availability of the products" attrs="{'invisible': [('show_check_availability', '=', False)]}" string="Check Availability" type="object" class="oe_highlight" groups="base.group_user"/>
+                </xpath>
+                <xpath expr="//form/header/button[@name='button_validate']" position='after'>
+                    <button name="button_validate_new"
+                            attrs="{'invisible': ['|', ('state', 'in', ('waiting','confirmed')), ('show_validate', '=', False)]}"
+                            string="Tolerance check" help="Checking the tolerance condition and pop up a warning message." type="object" class="oe_highlight" groups="stock.group_stock_user"/>
+                </xpath>
+                <xpath expr="//form/header/button[@name='button_validate']" position='replace'>
+                    <button name="button_validate"
+                            attrs="{'invisible': ['|', ('state', 'in', ('waiting','confirmed')), ('show_validate', '=', False)]}"
+                            string="Validate" help="It will continue the remaining processes(ie,backorder and Immediate transfer pop up message) when quantity is lesser than the required one" type="object" class="oe_highlight" groups="stock.group_stock_user"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="vpicktree_inherit_stock_picking_batch" model="ir.ui.view">
+            <field name="name">stock.picking.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='origin']" position="after">
+                    <field name="x_studio_order_reference" />
+                    <field name="x_studio_customer_reference_" />
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_backorder_confirmations" model="ir.ui.view">
+            <field name="name">stock_backorder_confirmation</field>
+            <field name="model">stock.backorder.confirmation</field>
+            <field name="inherit_id" ref="stock.view_backorder_confirmation"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group" position="after">
+                    <field name="backorder_confirmation_line_id" nolabel="1">
+                        <tree create="0" delete="0" editable="top">
+                            <field name="picking_id" invisible="1"/>
+                            <field name="product_id"/>
+                            <field name="to_process_backorder" widget="boolean_toggle"/>
+                            <field name="to_backorder" widget="boolean_toggle" invisible="1"/>
+                        </tree>
+                    </field>
+                </xpath>
+<!--                <xpath expr="//form/footer/button[@name='process']" position='replace'>-->
+<!--                    <button name="process_backorder" string="Create Backorder" type="object" class="oe_highlight"/>-->
+<!--                </xpath>-->
+                <xpath expr="//form/footer/button[@name='process']" position='replace'>
+                    <button name="create_selected_backorder" string="Create Backorder" type="object" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//form/footer/button[@name='process_cancel_backorder']" position='replace'>
+                    <button name="process_cancel_backorder" string="No Backorder" type="object" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

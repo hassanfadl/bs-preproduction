@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="purchase.purchase_rfq" model="ir.actions.act_window">
+        <field name="name">PO Preparation</field>
+    </record>
+
+    <record id="purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_confirm']" position="after">
+                <button name="action_click" type="object" string="Confirm"
+                        attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+            </xpath>
+            <xpath expr="//button[@name='button_cancel']" position="before">
+                <button name="action_approve" type="object" states='sent approval' string="Approve" class="oe_highlight"
+                        groups="purchase.group_purchase_manager"/>
+            </xpath>
+            <xpath expr="//button[@name='action_approve']" position="after">
+                <button name="button_disapprove" type="object" states='sent approval' string="Disapprove Order"
+                        class="oe_highlight" groups="purchase.group_purchase_manager"/>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_qty']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', 'not in', ['draft', 'sent'])]}</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='price_unit']" position="replace">
+                <field name="price_unit" string="Unit Cost" attrs="{'readonly': ['|', ('invoice_lines', '!=', []), ('state', 'not in', ['draft', 'sent'])]}"/>
+            </xpath>
+            <xpath expr="/form/sheet/div[2]" position="replace">
+                <div class="oe_title">
+                    <span class="o_form_label" attrs="{'invisible': [('state','not in',('draft','sent'))]}">Purchase
+                        Preparation
+                    </span>
+                    <span class="o_form_label" attrs="{'invisible': [('state','in',('draft','sent'))]}">Purchase Order
+                    </span>
+                    <h1>
+                        <field name="priority" widget="priority" class="mr-3"/>
+                        <field name="name" readonly="1"/>
+                    </h1>
+                </div>
+            </xpath>
+
+            <xpath expr="//sheet" position="before">
+                <div class="alert alert-danger" role="alert" style="margin-bottom:0px;"
+                     attrs="{'invisible': [('state', '!=', 'sent approval')]}" groups="purchase.group_purchase_user">
+                    Unit cost for the Product(s) should not be higher than the cost.
+                </div>
+            </xpath>
+            <xpath expr="//button[@name='button_confirm'][2]" position="attributes">
+                <attribute name="attrs"></attribute>
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//div[@name='reminder']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page[@name='products']" position="after">
+                <page string="Product Stages and packing requirements" name="product_stages">
+                    <form>
+                        <group>
+                            <field name="grey_cloth"/>
+                            <field name="swatches"/>
+                            <field name="test"/>
+                            <field name="quality_board"/>
+                            <field name="pallets"/>
+                            <field name="finished_products"/>
+                            <field name="quality_inspection"/>
+                            <field name="logistic_delivery"/>
+                            <field name="remarks"/>
+                            <field name="packing_requirements"/>
+                        </group>
+                    </form>
+                </page>
+            </xpath>
+            <xpath expr='//field[@name="order_line"]/tree/field[@name="price_unit"]' position="after">
+                <field name="approved_price"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_form_view" model="ir.ui.view">
+        <field name="name">purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header/button[@name='print_quotation']" position="replace">
+                <button name="print_quotation" string="Print RFQ" type="object" states="draft" class="oe_highlight"
+                        groups="base.group_user" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

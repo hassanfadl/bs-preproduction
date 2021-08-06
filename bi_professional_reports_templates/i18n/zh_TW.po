@@ -1,0 +1,1990 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* bi_professional_reports_templates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-09 08:53+0000\n"
+"PO-Revision-Date: 2021-04-12 18:38+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: zh_TW\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "+1x"
+msgstr "+1x"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_purchase_order__x_studio_1_pre_production_sample_ready_1
+msgid "1. Pre-production Sample Ready"
+msgstr "1. 大貨質量板日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "1. Pre-production sample ready :"
+msgstr "1. 大貨質量板日期："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "1.坯布 :"
+msgstr "1.坯布 :"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "1x"
+msgstr "1x"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_purchase_order__x_studio_2_shipment_sample_ready
+msgid "2. Shipment Sample Ready"
+msgstr "2. 大貨版日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "2. Shipment sample ready :"
+msgstr "2. 大貨版日期："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "2.色板 :"
+msgstr "2.色板 :"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_purchase_order__x_studio_3_finished_goods_ready
+msgid "3. Finished Goods Ready"
+msgstr "3. 交貨期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "3. Finished goods ready :"
+msgstr "3. 交貨期："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "3.測試 :"
+msgstr "3.測試 :"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "4.大貨質量板 :"
+msgstr "4.大貨質量板 :"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "5.大貨板 :"
+msgstr "5.大貨板 :"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "6.成品 :"
+msgstr "6.成品 :"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "7.品檢 :"
+msgstr "7.品檢 :"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "8.物流送貨 :"
+msgstr "8.物流送貨 :"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<br/>\n"
+"                                        <span>Account Name :</span>"
+msgstr ""
+"<br/>\n"
+"                                        <span>賬戶名稱 ：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<br/>\n"
+"                                        <span>Account No :</span>"
+msgstr ""
+"<br/>\n"
+"                                        <span>賬戶號碼 ：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<br/>\n"
+"                                        <span>Bank Address :</span>"
+msgstr ""
+"<br/>\n"
+"                                        <span>銀行地址 ：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"<br/>\n"
+"                                        <span>Customer reference:</span>"
+msgstr ""
+"<br/>\n"
+"                                        <span>客戶參考編號：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<br/>\n"
+"                                        <span>Swift:</span>"
+msgstr ""
+"<br/>\n"
+"                                        <span>銀行代號：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"<br/>\n"
+"                                        <span>Total Ctn/總箱數:</span>"
+msgstr ""
+"<br/>\n"
+"                                        <span>總箱數:</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<br/>\n"
+"                                    Sales contact:"
+msgstr ""
+"<br/>\n"
+"                                    營業員："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<br/>\n"
+"                                    Version:"
+msgstr ""
+"<br/>\n"
+"                                    版本:"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid ""
+"<br/>\n"
+"                                <span>採購員 :</span>"
+msgstr ""
+"<br/>\n"
+"                                <span>採購員 :</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid ""
+"<br/>\n"
+"                                <span>版本:</span>"
+msgstr ""
+"<br/>\n"
+"                                <span>版本:</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid ""
+"<br/>\n"
+"                            <span style=\"float:left;margin-left:15px;margin-top:5px;\">Customer reference:</span>"
+msgstr ""
+"<br/>\n"
+"                            <span style=\"float:left;margin-left:15px;margin-top:5px;\">客戶參考編號：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+msgid ""
+"<br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">Bank Name :</font>\n"
+"                            </span>"
+msgstr ""
+"<br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">銀行名稱 ：</font>\n"
+"                            </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+msgid ""
+"<br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">Branch Name/Address :</font>\n"
+"                            </span>"
+msgstr ""
+"<br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">分行名稱/地址：</font>\n"
+"                            </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+msgid ""
+"<br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">IFSC Code :</font>\n"
+"                            </span>"
+msgstr ""
+"<br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">IFSC Code :</font>\n"
+"                            </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+msgid ""
+"<br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">Swift Code :</font>\n"
+"                            </span>"
+msgstr ""
+"<br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">Swift Code :</font>\n"
+"                            </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"<br/>\n"
+"                            <span>Customer reference:</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>客戶參考編號：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"<br/>\n"
+"                            <span>Date:</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>日期：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"<br/>\n"
+"                        <br/>\n"
+"                        <strong>\n"
+"                            <span>Signature / Company Chop :</span>\n"
+"                        </strong>"
+msgstr ""
+"<br/>\n"
+"                        <br/>\n"
+"                        <strong>\n"
+"                            <span>簽署/公司蓋章：</span>\n"
+"                        </strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid ""
+"<br/>\n"
+"                        <span><font color=\"#fff\">Bank Name :</font> </span>"
+msgstr ""
+"<br/>\n"
+"                        <span><font color=\"#fff\">銀行名稱 ：</font> </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid ""
+"<br/>\n"
+"                        <span><font color=\"#fff\">Branch Name/Address :</font> </span>"
+msgstr ""
+"<br/>\n"
+"                        <span><font color=\"#fff\">分行名稱/地址</font> </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid ""
+"<br/>\n"
+"                        <span><font color=\"#fff\">IFSC Code : </font></span>"
+msgstr ""
+"<br/>\n"
+"                        <span><font color=\"#fff\">IFSC Code : </font></span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid ""
+"<br/>\n"
+"                        <span><font color=\"#fff\">Swift Code :</font> </span>"
+msgstr ""
+"<br/>\n"
+"                        <span><font color=\"#fff\">Swift Code :</font> </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid ""
+"<br/>\n"
+"                        <span>Bank Name :</span>"
+msgstr ""
+"<br/>\n"
+"                        <span>銀行名稱：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid ""
+"<br/>\n"
+"                        <span>Branch Name/Address :</span>"
+msgstr ""
+"<br/>\n"
+"                        <span>分行名稱/地址</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid ""
+"<br/>\n"
+"                        <span>IFSC Code :</span>"
+msgstr ""
+"<br/>\n"
+"                        <span>IFSC Code :</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid ""
+"<br/>\n"
+"                        <span>Swift Code :</span>"
+msgstr ""
+"<br/>\n"
+"                        <span>Swift Code :</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid ""
+"<br/>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <span style=\"float:left;\">產品規格 :</span>"
+msgstr ""
+"<br/>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <br/>\n"
+"                    <span style=\"float:left;\">產品規格 :</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<font color=\"#fff\">Cancelled Invoice</font>"
+msgstr "<font color=\"#fff\">已註銷發票</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid "<font color=\"#fff\">Delivery Note #</font>"
+msgstr "<font color=\"#fff\">送貨單 #</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<font color=\"#fff\">Draft Invoice</font>"
+msgstr "<font color=\"#fff\">發票草稿</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<font color=\"#fff\">Invoice</font>"
+msgstr "<font color=\"#fff\">發票</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid "<font color=\"#fff\">Origin:</font>"
+msgstr "<font color=\"#fff\">來源：</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#, fuzzy
+msgid "<font color=\"#fff\">PRO-FORMA</font>"
+msgstr "<font color=\"#fff\">PRO-FORMA</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<font color=\"#fff\">Refund</font>"
+msgstr "<font color=\"#fff\">退款</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid "<font color=\"#fff\">Scheduled Date:</font>"
+msgstr "<font color=\"#fff\">計劃日期：</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<font color=\"#fff\">Vendor Bill</font>"
+msgstr "<font color=\"#fff\">供應商賬單</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<font color=\"#fff\">Vendor Refund</font>"
+msgstr "<font color=\"#fff\">供應商退款</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<font>採購單</font>"
+msgstr "<font>採購單</font>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid ""
+"<span style=\"background-color:#3498DB;\">Customer Address</span>\n"
+"                            <br/>"
+msgstr ""
+"<span style=\"background-color:#3498DB;\">客戶地址</span>\n"
+"                            <br/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid "<span style=\"background-color:#3498DB;\">Delivery Address</span>"
+msgstr "<span style=\"background-color:#3498DB;\">送貨地址：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid "<span style=\"float:left;margin-left:15px;margin-top:5px;\">Invoice Date:</span>"
+msgstr "<span style=\"float:left;margin-left:15px;margin-top:5px;\">發票日期：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid "<span style=\"float:left;margin-left:15px;margin-top:5px;\">Invoice:</span>"
+msgstr "<span style=\"float:left;margin-left:15px;margin-top:5px;\">發票：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "<span style=\"margin-top:5px;\">Delivery note:</span>"
+msgstr "<span style=\"margin-top:5px;\">送貨單號：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+msgid "<span><font color=\"#fff\">Order# </font></span>"
+msgstr "<span><font color=\"#fff\">訂單# </font></span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "<span>CTN/箱:</span>"
+msgstr "<span>箱:</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "<span>Confirmed and Accepted By :</span>"
+msgstr "<span>確認並接受人：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "<span>Date/日期:</span>"
+msgstr "<span>日期:</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "<span>Delivery note:</span>"
+msgstr "<span>送貨單號：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid "<span>INVOICE</span>"
+msgstr "<span>發票</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "<span>PACKING LIST</span>"
+msgstr "<span>裝箱單</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid "<span>Page </span><span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "<span>頁數 </span><span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"<span>Page</span>\n"
+"                                <span class=\"page\"/>\n"
+"                                /\n"
+"                                <span class=\"topage\"/>"
+msgstr ""
+"<span>頁數</span>\n"
+"                                <span class=\"page\"/>\n"
+"                                /\n"
+"                                <span class=\"topage\"/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<span>Page</span>\n"
+"                            <span class=\"page\"/>\n"
+"                            /\n"
+"                            <span class=\"topage\"/>"
+msgstr ""
+"<span>頁數</span>\n"
+"                            <span class=\"page\"/>\n"
+"                            /\n"
+"                            <span class=\"topage\"/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "<span>Pro-Forma Invoice</span>"
+msgstr "<span>形式發票</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "<span>Product specification</span>"
+msgstr "<span>產品規格</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "<span>Sale Order:</span>"
+msgstr "<span>銷售單：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<span>採購單:</span>"
+msgstr "<span>採購單:</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<span>日期 :</span>"
+msgstr "<span>日期 :</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<span>送貨地點 :</span><br/>"
+msgstr "<span>送貨地點 :</span><br/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<span>頁數: </span><span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr "<span>頁數: </span><span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid ""
+"<strong style=\"color:#3498DB !important;\">Bank Account Details</strong>\n"
+"                        <br/>\n"
+"                        <span>Account Id :</span>"
+msgstr ""
+"<strong style=\"color:#3498DB !important;\">銀行賬戶詳細信息</strong>\n"
+"                        <br/>\n"
+"                        <span>賬戶號碼：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid ""
+"<strong style=\"color:#3498DB !important;\">Paypal Account Details</strong>\n"
+"                        <br/>\n"
+"                        <span>Paypal Id :</span>"
+msgstr ""
+"<strong style=\"color:#3498DB !important;\">Paypal賬戶詳細信息</strong>\n"
+"                        <br/>\n"
+"                        <span>Paypal 賬號：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+msgid ""
+"<strong style=\"color:#fff !important;\">Bank Account Details</strong>\n"
+"                            <br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">Account Id :</font>\n"
+"                            </span>"
+msgstr ""
+"<strong style=\"color:#fff !important;\">銀行賬戶詳細信息</strong>\n"
+"                            <br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">賬戶號碼：</font>\n"
+"                            </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid ""
+"<strong style=\"color:#fff !important;\">Bank Account Details</strong><br/>\n"
+"                        <span><font color=\"#fff\">Account Id :</font> </span>"
+msgstr ""
+"<strong style=\"color:#fff !important;\">銀行賬戶詳細信息</strong><br/>\n"
+"                        <span><font color=\"#fff\">賬戶號碼：</font> </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+msgid ""
+"<strong style=\"color:#fff !important;\">Paypal Account Details</strong>\n"
+"                            <br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">Paypal Id :</font>\n"
+"                            </span>"
+msgstr ""
+"<strong style=\"color:#fff !important;\">Paypal賬戶詳細信息</strong>\n"
+"                            <br/>\n"
+"                            <span>\n"
+"                                <font color=\"#fff\">Paypal 賬號：</font>\n"
+"                            </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid ""
+"<strong style=\"color:#fff !important;\">Paypal Account Details</strong><br/>\n"
+"                        <span><font color=\"#fff\">Paypal Id :</font> </span>"
+msgstr ""
+"<strong style=\"color:#fff !important;\">Paypal賬戶詳細信息</strong><br/>\n"
+"                        <span><font color=\"#fff\">Paypal 賬號：</font> </span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchasequotation_document
+msgid "<strong style=\"color:gray !important;\">Shipping address:</strong>"
+msgstr "<strong style=\"color:gray !important;\">送貨地址：</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_purchasequotation_document
+msgid "<strong style=\"color:gray !important;\">Vendor address:</strong><br/>"
+msgstr "<strong style=\"color:gray !important;\">供應商地址：</strong><br/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<strong>\n"
+"                                <span>Schedule Request</span>\n"
+"                            </strong>"
+msgstr ""
+"<strong>\n"
+"                                <span>貨期要求</span>\n"
+"                            </strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<strong>\n"
+"                                <span>Schedule</span>\n"
+"                            </strong>"
+msgstr ""
+"<strong>\n"
+"                                <span>貨期</span>\n"
+"                            </strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<strong>\n"
+"                            <span>Payment terms :</span>\n"
+"                        </strong>"
+msgstr ""
+"<strong>\n"
+"                            <span>付款條款:：</span>\n"
+"                        </strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<strong>\n"
+"                            <span>Remarks :</span>\n"
+"                        </strong>"
+msgstr ""
+"<strong>\n"
+"                            <span>備註：</span>\n"
+"                        </strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<strong>\n"
+"                            <span>Terms and conditions :</span>\n"
+"                        </strong>"
+msgstr ""
+"<strong>\n"
+"                            <span>條款及細則：</span>\n"
+"                        </strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "<strong> <span>Payment Term :</span></strong>"
+msgstr "<strong> <span>付款條款：</span></strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+msgid "<strong> Payment Term:</strong>"
+msgstr "<strong>付款條款：</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+msgid "<strong><font color=\"#FFF\"><span>Note:</span> </font></strong>"
+msgstr "<strong><font color=\"#FFF\"><span>備註：</span> </font></strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_purchasequotation_document
+msgid "<strong><span>Note:</span> </strong>"
+msgstr "<strong><span>備註：</span> </strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid "<strong><span>Payment Term :</span></strong>"
+msgstr "<strong><span>付款條款：</span></strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid "<strong><span>Remark:</span></strong>"
+msgstr "<strong><span>備註：</span></strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<strong><span>付款条件:</span></strong>"
+msgstr "<strong><span>付款条件:</span></strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<strong><span>備註 :</span> </strong>"
+msgstr "<strong><span>備註 :</span> </strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<strong><span>包裝/裝箱要求 :</span> </strong>"
+msgstr "<strong><span>包裝/裝箱要求 :</span> </strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<strong><span>條款及細則:</span></strong>"
+msgstr "<strong><span>條款及細則:</span></strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"<strong>Bank Account Details</strong>\n"
+"                                        <br/>\n"
+"                                        <span>Payment Method:</span>\n"
+"                                        <span/>\n"
+"                                        <br/>\n"
+"                                        <span>Advising Bank:</span>"
+msgstr ""
+"<strong>銀行賬戶詳細信息</strong>\n"
+"                                        <br/>\n"
+"                                        <span>付款方式：</span>\n"
+"                                        <span/>\n"
+"                                        <br/>\n"
+"                                        <span>收款銀行：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid ""
+"<strong>Bank Account Details</strong>\n"
+"                                        <br/>\n"
+"                                        <span>Payment Method:</span>\n"
+"                                        <span> </span><br/>\n"
+"                                        <span>Advising Bank:</span>"
+msgstr ""
+"<strong>銀行賬戶詳細信息</strong>\n"
+"                                        <br/>\n"
+"                                        <span>付款方式：</span>\n"
+"                                        <span> </span><br/>\n"
+"                                        <span>收款銀行：</span>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid "<strong>Comment:</strong>"
+msgstr "<strong>注釋：</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "<strong>Company chop</strong>"
+msgstr "<strong>公司蓋章</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+msgid "<strong>Customer Address:</strong><br/>"
+msgstr "<strong>客戶地址：</strong><br/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid ""
+"<strong>Customer Address</strong>\n"
+"                            <br/>"
+msgstr ""
+"<strong>客戶地址</strong>\n"
+"                            <br/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+msgid "<strong>Date Req.</strong>"
+msgstr "<strong>申請日期</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_deliveryslip_document
+msgid "<strong>Delivered Quantity</strong>"
+msgstr "<strong>已交貨數量</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+msgid "<strong>Description</strong>"
+msgstr "<strong>描述</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<strong>Due Date:</strong>"
+msgstr "<strong>到期日期:</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>財政狀況備註：</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<strong>Invoice Date:</strong>"
+msgstr "<strong>憑單日期:</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+msgid "<strong>Net Price</strong>"
+msgstr "<strong>淨價</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>訂購日期:</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_deliveryslip_document
+msgid "<strong>Ordered Quantity</strong>"
+msgstr "<strong>訂購數量</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<strong>Payment Term:</strong>"
+msgstr "<strong>付款條款：</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_deliveryslip_document
+msgid "<strong>Product</strong>"
+msgstr "<strong>產品</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+msgid "<strong>Qty</strong>"
+msgstr "<strong>數量</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+msgid "<strong>Sales Person:</strong>"
+msgstr "<strong>銷售員：</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+msgid "<strong>SalesPerson:</strong>"
+msgstr "<strong>銷售員：</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+msgid "<strong>Shipping Address:</strong><br/>"
+msgstr "<strong>送貨地址：</strong><br/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "<strong>Signature</strong>"
+msgstr "<strong>簽名</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "<strong>SubTotal</strong>"
+msgstr "<strong>小計：</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>小計</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "<strong>TOTAL</strong>"
+msgstr "<strong>總計</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+msgid "<strong>Taxes</strong>"
+msgstr "<strong>稅</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "<strong>Total Without Taxes</strong>"
+msgstr "<strong>除稅總計</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>總計</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>單價</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+msgid "<strong>Your Reference:</strong>"
+msgstr "<strong>您的編號：</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<strong>小計</strong>"
+msgstr "<strong>小計</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "<strong>總額</strong>"
+msgstr "<strong>總額</strong>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Absolute MCQ with surcharge :"
+msgstr "可加染色費染色的最少數量："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Absolute MOQ with surcharge :"
+msgstr "可加附件費織胚的最少數量："
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_company__account_template
+msgid "Account"
+msgstr "帳戶"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.res_partner_bank_inherit_form_view
+msgid "Address"
+msgstr "地址"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid ""
+"All items couldn't be shipped, the remaining ones will be shipped as soon as they become\n"
+"                            available."
+msgstr ""
+"無法運送所有物品，其餘物品將在完成後立即\n"
+"                            運送。"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Amount (HK$)"
+msgstr "金額(HK$)"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid "Amount(HK$)"
+msgstr "金額 (HK$)"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+msgid "Approval Date"
+msgstr "批准日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Bag"
+msgstr "袋"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_company__bank_account_id
+msgid "Bank Account"
+msgstr "銀行帳戶"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model,name:bi_professional_reports_templates.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "銀行帳戶"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_setup_bank_manual_config__branch_name
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__branch_name
+msgid "Branch Name"
+msgstr "分行名稱"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Bundle"
+msgstr "捆"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Carton"
+msgstr "箱"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_setup_bank_manual_config__city
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__city
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.res_partner_bank_inherit_form_view
+msgid "City"
+msgstr "城市"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__account_template__classic
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__purchase_template__classic
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__sale_template__classic
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__stock_template__classic
+msgid "Classic"
+msgstr "經典"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Color"
+msgstr "顏色"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"Color\n"
+"                                        <br/>\n"
+"                                        顏色"
+msgstr "顏色"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Color<br/>顏色"
+msgstr "顏色"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model,name:bi_professional_reports_templates.model_res_company
+msgid "Companies"
+msgstr "公司"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Composition"
+msgstr "成分"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Composition :"
+msgstr "成分："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_deliveryslip_document
+msgid "Contact Address"
+msgstr "聯繫地址"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_setup_bank_manual_config__country_id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__country_id
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.res_partner_bank_inherit_form_view
+msgid "Country"
+msgstr "國家"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_report_packing_list_print_packing_list_report__create_uid
+msgid "Created by"
+msgstr "創立者"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_report_packing_list_print_packing_list_report__create_date
+msgid "Created on"
+msgstr "建立於"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Ctn Size<br/>箱尺寸 (cm)"
+msgstr "箱尺寸 (cm)"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Ctn#<br/>箱號"
+msgstr "箱號"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Ctn<br/>箱號"
+msgstr "箱號"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "Customer"
+msgstr "客戶"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_deliveryslip_document
+msgid "Customer Address"
+msgstr "客戶地址"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"Customer Reference\n"
+"                                        <br/>\n"
+"                                        客戶參考編號"
+msgstr "客戶參考編號"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_purchase_order__customer_request_date1
+msgid "Customer Request Date"
+msgstr "客戶要求日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"Cuttable\n"
+"                                        width"
+msgstr "可用封度"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Cuttable Width :"
+msgstr "可用封度："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "DELIVERY NOTE"
+msgstr "送貨單"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Date"
+msgstr "日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+msgid "Date Req."
+msgstr "要求日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Date:"
+msgstr "日期:"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_deliveryslip_document
+msgid "Delevery #"
+msgstr "送貨單 #"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"Deliver To/收貨方:\n"
+"                                    <br/>"
+msgstr "收貨方: <br/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid "Delivered Quantity"
+msgstr "已交貨數量"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Delivery"
+msgstr "交貨"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid "Delivery Address"
+msgstr "收貨地址"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Description"
+msgstr "說明"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Details<br/>明細"
+msgstr "明細"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "Disc.(%)"
+msgstr "折扣(%)"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_move__display_name
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_report_packing_list_print_packing_list_report__display_name
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_company__display_name
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__display_name
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_sale_order__display_name
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_stock_production_lot__display_name
+msgid "Display Name"
+msgstr "顯示名稱"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid "Draft Invoice"
+msgstr "草稿憑單"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid "Due Date"
+msgstr "到期時間"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_purchasequotation_document
+msgid "Expected Date"
+msgstr "期望交貨日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "FOC qty<br/>讓碼數"
+msgstr "讓碼數"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__account_template__fency
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__purchase_template__fency
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__sale_template__fency
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__stock_template__fency
+msgid "Fency"
+msgstr "花式"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "G.W<br/>毛重"
+msgstr "毛重"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Handled by"
+msgstr "處理人"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_move__id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_purchase_order__id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_report_packing_list_print_packing_list_report__id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_company__id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_sale_order__id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_stock_production_lot__id
+msgid "ID"
+msgstr "ID"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_setup_bank_manual_config__ifsc
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__ifsc
+msgid "IFSC"
+msgstr "IFSC"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid "Invoice #"
+msgstr "憑單 #"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid "Invoice Date"
+msgstr "開立憑單日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+msgid "Invoicing and Shipping Address"
+msgstr "發票和收貨地址"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "Invoicing and shipping address"
+msgstr "發票和收貨地址"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"Item\n"
+"                                        <br/>\n"
+"                                        貨物編號"
+msgstr "貨物編號"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"Item description\n"
+"                                        <br/>\n"
+"                                        貨物名稱"
+msgstr "貨物名稱"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Item#<br/>貨物編號"
+msgstr "貨物編號"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model,name:bi_professional_reports_templates.model_account_move
+msgid "Journal Entry"
+msgstr "日記帳分錄"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_move____last_update
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_purchase_order____last_update
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_report_packing_list_print_packing_list_report____last_update
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_company____last_update
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank____last_update
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_sale_order____last_update
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_stock_production_lot____last_update
+msgid "Last Modified on"
+msgstr "最後修改於"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_report_packing_list_print_packing_list_report__write_uid
+msgid "Last Updated by"
+msgstr "最後更新者"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_report_packing_list_print_packing_list_report__write_date
+msgid "Last Updated on"
+msgstr "最後更新於"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"Leadtime with\n"
+"                                                        greige :"
+msgstr "有胚存情況下大貨交期："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Leadtime with stock :"
+msgstr "有庫存情況下樣板交期："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"Leadtime without\n"
+"                                                        greige :"
+msgstr "沒胚存情況下大貨交期："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Leadtime without stock :"
+msgstr "有庫存情況下樣板交期："
+
+#. module: bi_professional_reports_templates
+#: model:ir.model,name:bi_professional_reports_templates.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "批次/序列號"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_deliveryslip_document
+msgid "Lot/Serial Number"
+msgstr "批次/序列號碼"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "MCQ :"
+msgstr "最低染色數量："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "MOQ :"
+msgstr "最低訂單數量："
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__account_template__modern
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__purchase_template__modern
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__sale_template__modern
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__stock_template__modern
+msgid "Modern"
+msgstr "現代的"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "N.W&amp;nbsp;<br/>淨重"
+msgstr "淨重"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+msgid "Net Price"
+msgstr "淨價"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__account_template__odoo_standard
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__purchase_template__odoo_standard
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__sale_template__odoo_standard
+#: model:ir.model.fields.selection,name:bi_professional_reports_templates.selection__res_company__stock_template__odoo_standard
+msgid "Odoo Standard"
+msgstr "Odoo 標準"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+msgid "Order Date"
+msgstr "報價日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid ""
+"Ordered\n"
+"                                    Quantity"
+msgstr "訂購數量"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+msgid "Ordered Quantity"
+msgstr "訂購數量"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_deliveryslip_document
+msgid "Origin"
+msgstr "原始"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#, fuzzy
+msgid "PRO-FORMA"
+msgstr "PRO-FORMA"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Pattern Repeat :"
+msgstr "花距："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Pattern repeat"
+msgstr "花距"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+msgid "Payment Term"
+msgstr "付款條款"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+msgid "Payment Term :"
+msgstr "付款條款："
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_bank_statement_line__paypal_chk
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_move__paypal_chk
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_payment__paypal_chk
+msgid "Paypal"
+msgstr "Paypal"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_bank_statement_line__paypal_id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_move__paypal_id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_payment__paypal_id
+msgid "Paypal Id"
+msgstr "Paypal賬號"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "Price"
+msgstr "價格"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid "Product"
+msgstr "商品"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_company__purchase_template
+msgid "Purchase"
+msgstr "採購"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model,name:bi_professional_reports_templates.model_purchase_order
+msgid "Purchase Order"
+msgstr "採購訂單"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+msgid "Purchase Order #"
+msgstr "採購訂單 #"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+msgid "Purchase Order:"
+msgstr "採購訂單："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "QTY Unit<br/>數量單位"
+msgstr "數量單位"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "QUOTATION"
+msgstr "報價單"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Qty"
+msgstr "數量"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"Qty\n"
+"                                        <br/>\n"
+"                                        數量"
+msgstr "數量"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Qty<br/>數量"
+msgstr "數量"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_stock_production_lot__product_qty
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "Quantity"
+msgstr "數量"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "Quotation #"
+msgstr "報價單 #"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "Quotation Date"
+msgstr "訂購日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Quotation:"
+msgstr "報價單："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+msgid "Reference/Description"
+msgstr "參考/說明"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+msgid "Request For Quatation #"
+msgstr "詢價單#"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_purchasequotation_document
+msgid "Request for Quotation"
+msgstr "詢價單"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+msgid "Request for Quotation #"
+msgstr "詢價單#"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Roll"
+msgstr "卷"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "SALES ORDER"
+msgstr "銷售單"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid ""
+"SO#\n"
+"                                        <br/>\n"
+"                                        銷售單號"
+msgstr "銷售單號"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "SO#<br/>銷售單號"
+msgstr "銷售單號"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_company__sale_template
+msgid "Sale"
+msgstr "銷售"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model,name:bi_professional_reports_templates.model_sale_order
+msgid "Sales Order"
+msgstr "銷售訂單"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Sales Order:"
+msgstr "銷售單："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+msgid "SalesPerson"
+msgstr "銷售員"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_deliveryslip_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+msgid "Scheduled Date"
+msgstr "預定交貨日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+msgid "Shipping Address"
+msgstr "送貨地址"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_setup_bank_manual_config__state_id
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__state_id
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.res_partner_bank_inherit_form_view
+msgid "State"
+msgstr "狀態"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_company__stock_template
+msgid "Stock"
+msgstr "庫存"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_setup_bank_manual_config__street
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__street
+msgid "Street"
+msgstr "街道"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.res_partner_bank_inherit_form_view
+msgid "Street 2..."
+msgstr "街道2..."
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.res_partner_bank_inherit_form_view
+msgid "Street..."
+msgstr "街道..."
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_setup_bank_manual_config__street2
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__street2
+msgid "Street2"
+msgstr "街道 2"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_setup_bank_manual_config__swift_code
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__swift_code
+msgid "Swift Code"
+msgstr "Swift Code"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Tax"
+msgstr "稅金"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Taxes"
+msgstr "稅金"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_deliveryslip_document
+msgid "This shipment is a backorder of"
+msgstr "這批貨中缺貨"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"To :\n"
+"                                <br/>"
+msgstr ""
+"致：\n"
+"                                <br/>"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Tolerance"
+msgstr "接受公差"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid ""
+"Tolerence\n"
+"                                                        acceptance :"
+msgstr "接受公差："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Total CBM:"
+msgstr "總共體積："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_deliveryslip_document
+msgid "Total:"
+msgstr "總計："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.fency_report_saleorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_invoice_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_saleorder_document
+msgid "Unit Price"
+msgstr "單價"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Unit price (HK$)"
+msgstr "單價 (HK$)"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_invoice_document
+msgid "Unit price(HK$)"
+msgstr "單價 (HK$)"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.classic_report_purchasequotation_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.modern_report_purchasequotation_document
+msgid "Vendor"
+msgstr "供應商"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_purchase_order__version_no
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_sale_order__version
+msgid "Version"
+msgstr "版本"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Weight"
+msgstr "重量"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Weight :"
+msgstr "重量："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Width"
+msgstr "寬度"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "Width :"
+msgstr "寬度："
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.res_partner_bank_inherit_form_view
+msgid "ZIP"
+msgstr "郵遞區號"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_account_setup_bank_manual_config__zip
+#: model:ir.model.fields,field_description:bi_professional_reports_templates.field_res_partner_bank__zip
+msgid "Zip"
+msgstr "郵遞區號"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_std_report_saleorder_document
+msgid "per YD"
+msgstr "每碼"
+
+#. module: bi_professional_reports_templates
+#: model:ir.model,name:bi_professional_reports_templates.model_report_packing_list_print_packing_list_report
+msgid "report.packing_list.print_packing_list_report"
+msgstr ""
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "可用封度"
+msgstr "可用封度"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "單價(貨幣)"
+msgstr "單價(貨幣)"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "图案重复"
+msgstr "花距"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "寬度"
+msgstr "寬度"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "成份"
+msgstr "成份"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "接受公差"
+msgstr "接受公差"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "數量"
+msgstr "數量"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "稅項"
+msgstr "稅項"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "貨期要求 :"
+msgstr "貨期要求 :"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "貨物名稱"
+msgstr "貨物名稱"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "送貨日期"
+msgstr "送貨日期"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "重量"
+msgstr "重量"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "金額(貨幣)"
+msgstr "金額(貨幣)"
+
+#. module: bi_professional_reports_templates
+#: model_terms:ir.ui.view,arch_db:bi_professional_reports_templates.odoo_standard_report_purchaseorder_document
+msgid "顏色"
+msgstr "顏色"

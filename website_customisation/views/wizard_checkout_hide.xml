@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--  Hide wizard checkout from the cart and payment page  -->
+    <template id="wizard_checkout" inherit_id="website_sale.wizard_checkout">
+        <xpath expr="//div[hasclass('progress-wizard')]" position="attributes">
+            <attribute name="t-att-style">'display: none;'</attribute>
+        </xpath>
+    </template>
+</odoo>

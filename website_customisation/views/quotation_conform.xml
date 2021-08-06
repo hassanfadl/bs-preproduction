@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="quotation_confirmation">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="container oe_website_sale py-2">
+                    <div>
+                        <h1>
+                            <span>Ref.<em><t t-esc='variable'/></em></span>
+                        </h1>
+                    </div><br/>
+                    <div class="card border-info mb-3" style="max-width: 48rem; line-height: 60px;">
+                        <div class="card-header text-white" style="background-color: #169db2; font-size: 23px">Thank you
+                            for
+                            your enquiry. We will send you the quotation shortly!
+                        </div>
+                        <div class="card-body " style="background-color: #e8f6f8; line-height: 10px;">
+                            <h5 class="card-title"/>
+                            <p class="card-text">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

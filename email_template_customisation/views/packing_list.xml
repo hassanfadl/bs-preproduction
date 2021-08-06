@@ -1,0 +1,39 @@
+<odoo>
+    <record id="view_picking_form_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">>
+                <button name="action_delivery_sent"
+                        attrs="{'invisible': [('state', '!=', 'done')]}"
+                        string="Send by Mail" type="object"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="email_template_delivery_done" model="mail.template">
+        <field name="name">Delivery note: Send Mail</field>
+        <field name="model_id" ref="email_template_customisation.model_stock_picking"/>
+        <field name="subject">PopuSunLace Delivery (${object.name or 'n/a' })</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Hello,
+                    <br/>
+                    <br/>
+                    Attached please find our delivery note and packing list for your reference.
+                    Do not hesitate to contact us if you have any questions.
+                    <br/>
+                    <br/>
+                    Pupushun Co., Ltd.
+                </p>
+            </div>
+        </field>
+        <field name="report_template" ref="stock.action_report_delivery"/>
+        <field name="report_name">DN_${(object.name or '').replace('/','_')}</field>
+        <field name="lang">${object.partner_id.lang}</field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+</odoo>

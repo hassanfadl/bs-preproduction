@@ -1,0 +1,175 @@
+<odoo>
+    <record id="email_template_purchase_done" model="mail.template">
+        <field name="name">Purchase Order: Send PO</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="subject">廣州萬花貿易有限公司(Ref${object.name or 'n/a' })</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    您好,
+                    <br/>
+                    <br/>
+                    請查收我司的採購單, 如有疑問請於24小時內聯繫我司採購員.
+                    <br/>
+                    <br/>
+                    % if object.order_line:
+                        <table class="table table-sm" border="1">
+                            <thead>
+                                <tr>
+                                    <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                        class="text-left">
+                                        貨物名稱
+                                    </th>
+                                    <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                        class="text-left">數量
+                                    </th>
+                                    <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                        class="text-left">單價
+                                    </th>
+                                    <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                        class="text-left">
+                                        稅項
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+                                % for line in object.order_line:
+                                <tr>
+                                    <td>
+                                        ${line.name}
+                                    </td>
+                                    <td>
+                                        ${line.product_uom_qty}
+                                    </td>
+                                    <td>
+                                        ${line.price_unit}
+                                    </td>
+                                    <td>
+                                        % if line.taxes_id:
+                                            ${line.taxes_id[0].amount}
+                                        % endif
+                                    </td>
+                                </tr>
+                                % endfor
+                            </tbody>
+                        </table>
+                    % endif
+                    <br/>
+                    此致,
+                    <br/>
+                    普普順有限公司
+                </p>
+            </div>
+        </field>
+        <field name="report_template" ref="purchase.action_report_purchase_order"/>
+        <field name="report_name">PO_${(object.name or '').replace('/','_')}</field>
+        <field name="lang">${object.partner_id.lang}</field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+    <record id="email_template_purchase_confirm" model="mail.template">
+        <field name="name">Purchase Order: Send RFQ</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="subject">廣州萬花貿易有限公司(Ref ${object.name or 'n/a' })</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    親 ${object.partner_id.name}
+                    % if object.partner_id.parent_id:
+                    (${object.partner_id.parent_id.name})
+                    % endif
+                    <br/>
+                    <br/>
+                    附件中有報價請求
+                    <strong>${object.name}</strong>
+                    % if object.partner_ref:
+                    供參考: ${object.partner_ref}
+                    % endif
+                    從 廣州萬花貿易有限公司.
+                    <br/>
+                    <br/>
+                    如有任何疑問，請隨時與我們聯繫。
+                    <br/>
+                    <br/>
+                    此致，
+                </p>
+            </div>
+        </field>
+        <field name="report_template" ref="purchase.report_purchase_quotation"/>
+        <field name="report_name">RFQ_${(object.name or '').replace('/','_')}</field>
+        <field name="lang">${object.partner_id.lang}</field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+
+    <record id="email_template_purchase_send_po_confirm" model="mail.template">
+        <field name="name">PO Send</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="subject">廣州萬花貿易有限公司(Ref ${object.name or 'n/a' })</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Hello,
+                        <br/>
+                        <br/>
+                        Thanks for your order confirmation.
+                        <br/>
+                        Please put your company chop on our Sales Order and email back with thanks.
+                        <br/>
+                        <br/>
+                        <table class="table table-sm" border="1">
+                            <thead>
+                                <tr>
+                                    <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                        class="text-left">
+                                        Description
+                                    </th>
+                                    <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                        class="text-left">Qty
+                                    </th>
+                                    <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                        class="text-left">Unit price
+                                    </th>
+                                    <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                        class="text-left">
+                                        Tax
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+                                % for line in object.order_line:
+                                <tr>
+                                    <td>
+                                        ${line.name}
+                                    </td>
+                                    <td>
+                                        ${line.product_qty}
+                                    </td>
+                                    <td>
+                                        ${line.price_unit}
+                                    </td>
+                                    <td>
+                                        % if line.taxes_id:
+                                            ${line.taxes_id[0].amount}
+                                        % endif
+                                    </td>
+                                </tr>
+                                % endfor
+                            </tbody>
+                        </table>
+                        <br/>
+                        Do not hesitate to contact us if you have any questions.
+                        <br/>
+                        <br/>
+                        Regards from POPUSUNLACE
+                </p>
+            </div>
+        </field>
+        <field name="report_template" ref="purchase.action_report_purchase_order"/>
+        <field name="report_name">PO_${(object.name or '').replace('/','_')}</field>
+        <field name="lang">${object.partner_id.lang}</field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Allow updating on noupdate=True records -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('module', '=', 'sale'), ('name', '=', 'mail_notification_paynow_online')]" />
+        </function>
+        <value eval="{'noupdate': False}" />
+    </function>
+
+    <record id="sale.mail_notification_paynow_online" model="ir.ui.view">
+        <field name="active">False</field>
+
+    </record>
+    <!-- Revoke noupdate change -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('module', '=', 'sale'), ('name', '=', 'mail_notification_paynow_online')]" />
+        </function>
+        <value eval="{'noupdate': True}" />
+    </function>
+
+</odoo>

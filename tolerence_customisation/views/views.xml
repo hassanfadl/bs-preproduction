@@ -1,0 +1,47 @@
+<odoo>
+
+    <record id="tolerence_in_view_partner_form" model="ir.ui.view">
+        <field name="name">tolerence.res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="tolerance_rate"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="tolerence_sale_order_inherit" model="ir.ui.view">
+        <field name="name">sale.order.tolerence</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//field[@name="order_line"]/tree/field[@name="product_uom_qty"]' position="after">
+                <field name="tolerance_rate"/>
+                <field name="partner_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="tolerence_purchase_order_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.tolerence</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//field[@name="order_line"]/tree/field[@name="product_qty"]' position="after">
+                <field name="tolerance_rate"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_picking_form_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='quantity_done']" position="after">
+                <field name="tolerance_rate"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

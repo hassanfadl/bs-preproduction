@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--  hides price details from the product_item template  -->
+    <template id="products_item" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('product_price')]//span[1]" position="replace">
+
+        </xpath>
+    </template>
+    <!--  hide product_price  -->
+    <template id="product_price_inherit" inherit_id="website_sale.product_price">
+        <xpath expr="//div[@itemprop='offers']" position="replace">
+        </xpath>
+    </template>
+    <!--  hide product_quantity from selected product -->
+    <template id="product_quantity_inherit" inherit_id="website_sale.product_quantity">
+        <xpath expr="//div[hasclass('css_quantity')]" position="replace">
+        </xpath>
+    </template>
+    <!--  hide quantity and price from the cart lines -->
+    <template id="cart_lines_inherit" inherit_id="website_sale.cart_lines">
+        <xpath expr="//th[hasclass('td-qty')]" position="replace">
+        </xpath>
+        <!--   removes quantity     -->
+        <xpath expr="//div[hasclass('css_quantity')]" position="attributes">
+            <attribute name="t-att-style">'display: none;'</attribute>
+        </xpath>
+        <!--    removes price   -->
+        <xpath expr="//th[hasclass('td-price')]" position="replace">
+        </xpath>
+        <xpath expr="//td[hasclass('td-price')]" position="replace">
+        </xpath>
+    </template>
+
+    <template id="payment" inherit_id="website_sale.payment">
+        <xpath expr="//div[hasclass('card')]" position="replace">
+
+        </xpath>
+    </template>
+    <template id="payment_tokens_list" inherit_id="payment.payment_tokens_list">
+        <xpath expr="//div[hasclass('o_payment_acquirer_select')]" position="attributes">
+            <attribute name="t-att-style">'display: none;'</attribute>
+        </xpath>
+    </template>
+    <!--  removes short_cart_summary  -->
+    <template id="short_cart_summary" inherit_id="website_sale.short_cart_summary">
+        <xpath expr="//div[hasclass('js_cart_summary')]" position="replace">
+
+        </xpath>
+    </template>
+    <!--  removes cart summary  -->
+    <template id="cart_summary" inherit_id="website_sale.cart_summary">
+        <xpath expr="//div[hasclass('toggle_summary_div')]" position="replace">
+
+        </xpath>
+    </template>
+    <!--    remove qty from cart - when mouse over cart symbol(top)-->
+    <template id="cart_popover_inherit" inherit_id="website_sale.cart_popover">
+    <xpath expr="//div[hasclass('cart_line')]//div[2]" position="replace">
+        <div class="col-9">
+        <div>
+            <t t-call="website_sale.cart_line_product_link">
+                <span class="h6" t-esc="line.name" style="text-align:right;"/>
+            </t>
+        </div>
+        </div>
+    </xpath>
+    </template>
+
+    <!--  Hide and change custom texts   -->
+    <template id="confirmation" inherit_id="website_sale.confirmation">
+        <xpath expr="//table[hasclass('table')]" position="replace">
+
+        </xpath>
+        <xpath expr="//div[hasclass('card')]" position="replace">
+
+        </xpath>
+        <xpath expr="//h1" position="replace">
+            <span>
+                <h1>Order Ref.
+                    <em t-field="order.name"/>
+                </h1>
+            </span>
+        </xpath>
+        <!--    Hide "Payment Information:"    -->
+        <xpath expr="//div[hasclass('oe_cart')]/h3[hasclass('mt-3')]" position="replace">
+
+        </xpath>
+    </template>
+    <!--  Hides total subtotal and the tax details  -->
+    <template id="total" inherit_id="website_sale.total">
+        <xpath expr="//div[@id='cart_total']" position="attributes">
+            <attribute name="t-att-style">'display: none;'</attribute>
+        </xpath>
+    </template>
+    <!--  Hide text and company_description from the contact us menu  -->
+    <template id="contactus" inherit_id="website.contactus">
+        <xpath expr="//div[hasclass('col-lg-12')]" position="replace">
+        </xpath>
+        <xpath expr="//div[hasclass('mt-lg-0')]" position="replace">
+        </xpath>
+    </template>
+    <!--  Price in Comparison  -->
+    <template id="product_product" inherit_id="website_sale_comparison.product_product">
+        <xpath expr="//div[hasclass('pl-2')]" position="replace">
+            <h6>
+                <a t-att-href="product.website_url">
+                    <t t-esc="combination_info['display_name']"/>
+                </a>
+                <br/>
+                <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}"
+                     style="white-space: nowrap;" t-esc="combination_info['list_price']"
+                     t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+            </h6>
+        </xpath>
+    </template>
+    <!--  Price in Wishlist  -->
+    <template id="product_wishlist" inherit_id="website_sale_wishlist.product_wishlist">
+        <xpath expr="//td[3]" position="replace">
+
+        </xpath>
+    </template>
+    <!--  Hide price in the suggested products  -->
+    <template id="suggested_products_list_inherit" inherit_id="website_sale.suggested_products_list">
+        <xpath expr="//td[hasclass('td-price')]" position="replace">
+
+        </xpath>
+    </template>
+    <!--    -->
+    <!--<template id="portal_layout" inherit_id="portal.portal_layout">
+        <xpath expr="//div[hassclass('o_my_sidebar')]" position="replace">
+
+        </xpath>
+    </template>-->
+</odoo>

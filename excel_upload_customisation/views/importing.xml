@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="view_invoice_import" model="ir.ui.view">
+        <field name="name">invoice.import.view.form</field>
+        <field name="model">production.lot.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="file_name"/>
+                    </group>
+                    <footer>
+                        <button name="confirmation_msg" type="object" string="Import" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_invoice_import" model="ir.actions.act_window">
+        <field name="name">Import Lots/Serial Number</field>
+        <field name="res_model">production.lot.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_invoice_import"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_invoice_import" name="Lots/Serial Number Importing" action="action_invoice_import"
+        parent="stock.menu_stock_root" sequence="36"/>
+
+    <record id="condition_checking_wizard" model="ir.ui.view">
+        <field name="name">condition.checking.wizard</field>
+        <field name="model">production.lot.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <p>Purchase Order exist twice.Do you want to continue?</p>
+                <footer>
+                    <button string="Continue" type="object" name="action_import_lots"/>
+                    <button string="No" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

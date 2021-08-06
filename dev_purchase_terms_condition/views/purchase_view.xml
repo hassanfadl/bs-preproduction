@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="form_purchase_dev_purchase_terms_condition_inherited" model="ir.ui.view">
+        <field name="name">form.purchase.dev.purchase.terms.condition.inherited</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='notes']" position="before">
+                <group>
+                    <field name="terms_id" style="width:50%%"
+                           options="{'no_create': True, 'no_quick_create': True, 'no_open': True, 'no_create_edit': True}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,113 @@
+<odoo>
+    <record id="email_template_invoice_send" model="mail.template">
+        <field name="name">Invoice: Send by email</field>
+        <field name="model_id" ref="email_template_customisation.model_account_move"/>
+        <field name="email_from">${(object.invoice_user_id.email_formatted or user.email_formatted) |safe}</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="subject">PopuSunLace Invoice(Ref${object.name or 'n/a'})</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Hello,
+                    <br/>
+                    <br/>
+                    Attached please find the invoice for your payment.
+                    <br/>
+                    <br/>
+                    <table class="table table-sm" border="1">
+                        <thead>
+                            <tr>
+                                <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                    class="text-left">
+                                    Invoice #
+                                </th>
+                                <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                    class="text-left">
+                                    Sales Order #
+                                </th>
+                                <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                    class="text-left">
+                                    Customer Reference #
+                                </th>
+                                <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                    class="text-left">
+                                    Amount
+                                </th>
+                                <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                    class="text-left">
+                                    Due date
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="sale_tbody">
+                            <tr>
+                                <td>
+                                    ${object.name}
+                                </td>
+                                <td>
+                                    ${object.invoice_origin}
+                                </td>
+                                <td>
+                                    ${object.ref.name}
+                                </td>
+                                <td>
+                                    <label style="position: relative; left:15px;">$</label>${object.amount_total}
+                                </td>
+                                <td>
+                                    ${object.invoice_date_due}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <br/>
+                    Do not hesitate to contact us if you have any questions.
+                    <br/>
+                    <br/>
+                    Regards from POPUSUNLACE
+                </p>
+            </div>
+        </field>
+        <field name="report_template" ref="account.account_invoices"/>
+        <field name="report_name">Invoice_${(object.name or '').replace('/','_')}${object.state == 'draft' and '_draft' or ''}</field>
+        <field name="lang">${object.partner_id.lang}</field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+    <record id="invoice_send_wizard_wizard_form_inherit"
+            model="ir.ui.view">
+        <field name="name">invoice_sent_inherit_form_view
+        </field>
+        <field name="model">account.invoice.send</field>
+        <field name="inherit_id"
+               ref="account.account_invoice_send_wizard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/div/div/group/label" position="before">
+                <field name="email_from" invisible="0"/>
+            </xpath>
+            <label for="partner_ids" position="replace">
+                <label for="partner_ids" string="To"/>
+            </label>
+            <div name="option_print" position="attributes">
+                <attribute name="attrs">{'invisible':1}</attribute>
+            </div>
+            <div name="option_letter" position="attributes">
+                <attribute name="attrs">{'invisible':1}</attribute>
+            </div>
+            <div name="option_email" position="attributes">
+                <attribute name="attrs">{'invisible':1}</attribute>
+            </div>
+        </field>
+    </record>
+    <record id="stock_picking_wizard_form_" model="ir.ui.view">
+        <field name="name">stock.picking.wizard</field>
+        <field name="model">account.invoice.send</field>
+        <field name="priority" eval="1"/>
+        <field name="inherit_id"
+               ref="account_edi.account_invoice_send_inherit_account_wizard_form"/>
+        <field name="arch" type="xml">
+            <div name="edi_format_option" position="attributes">
+                <attribute name="attrs">{'invisible':1}</attribute>
+            </div>
+        </field>
+    </record>
+</odoo>

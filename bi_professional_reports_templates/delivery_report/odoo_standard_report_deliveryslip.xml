@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report string="DN+Packing list(PDF)"
+                id="stock.action_report_delivery"
+                model="stock.picking"
+                report_type="qweb-pdf"
+                name="stock.report_deliveryslip"
+                file="stock.report_deliveryslip"/>
+
+        <template id="odoo_std_report_deliveryslip_document">
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company_id" t-value="o.company_id"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company_id" t-value="res_company"/>
+            </t>
+            <t t-call="bi_professional_reports_templates.external_layout_standard_inherited">
+                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                <t t-set="company" t-value="o.company_id"/>
+                <div class="page">
+                    <div class="header">
+                        <div class="row mt32 mb32">
+                            <div class="col-6" style="font:15px lucida-console,sans-serif !important;">
+                                <span t-field="o.company_id.partner_id"/>
+                                <br/>
+                                <span t-field="o.company_id.partner_id.street"/>
+                                <br/>
+                                <span t-field="o.company_id.partner_id.street2"/>
+                                <br/>
+                                <span t-field="o.company_id.partner_id.city"/>
+                                <br/>
+                                <span t-field="o.company_id.partner_id.phone"/>
+                                <br/>
+                            </div>
+                            <div class="col-6 text-right">
+                                <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="max-height: 90px;"/>
+                            </div>
+                        </div>
+                        <div style="margin-top: 10px; background-color: #DCDCDC;">
+                            <div class="oe_structure"/>
+                            <div style="border-bottom: 1px solid grey;"/>
+                            <div style="float:left;">
+                                <span style="float: left;">
+                                    <t t-esc="o.partner_id.name"/>
+                                </span>
+                                <br/>
+                                <t t-esc="o.partner_id.street"/>
+                                <br/>
+                                <t t-esc="o.partner_id.street2"/>
+                                <br/>
+
+                                <t t-esc="o.partner_id.city"/>
+                                <br/>
+
+                                <t t-esc="o.partner_id.country_id.name"/>
+                                <br/>
+                                <br/>
+                            </div>
+
+                            <div style="float:right;border:1px solid grey;width:350px;margin-right:30px;margin-top:10px">
+                                <div style="background-color:#6495ED !important;color:#FFF !important;">
+                                    <span>
+                                        <t t-if="o.name">
+                                            <span>Delivery note:</span>
+                                            <span class="float-right" style="padding-right: 5px;">
+                                                <t t-esc="o.name"/>
+                                            </span>&amp;nbsp;
+                                        </t>
+                                    </span>
+                                </div>
+                                <span>Sale Order:</span>
+                                <span class="float-right" style="padding-right: 5px;">
+                                    <t t-esc="o.origin"/>
+                                </span>
+                                <br/>
+                                <span>Date:</span>
+                                <span class="float-right" style="padding-right: 5px;">
+                                    <t t-esc="o.scheduled_date" t-options="{&quot;widget&quot;: &quot;date&quot;, &quot;format&quot;: &quot;d/MM/yyyy&quot;}"/>
+                                </span>
+                                <br/>
+                                <span>Customer reference:</span>
+                                <span class="float-right" style="padding-right: 5px;">
+                                    <t t-esc="o.x_studio_customer_reference_"/>
+                                </span>
+                                <br/>
+                                <span>Pages:</span>
+                                <span class="float-right" style="padding-right: 5px;">
+                                    <span class="page"/>
+                                    /
+                                    <span class="topage"/>
+                                </span>
+                                <br/>
+                            </div>
+                            <div class="row mt32 mb32">
+                                <div class="col-6">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid grey;"/>
+                        <br/>
+                    </div>
+                    <div>
+                        <h3 style="text-align:center">DELIVERY NOTE</h3>
+                    </div>
+                    <table class="table table-sm" style="padding-top=50px;" t-if="o.move_line_ids">
+                        <t t-set="has_serial_number" t-value="o.move_line_ids.mapped('lot_id')" groups="stock.group_production_lot"/>
+                        <thead style=" background-color: #893b74;">
+                            <tr>
+                                <th style="background-color:#6495ED !important;color:#FFF !important;"/>
+                                <th style="text-align:left;background-color:#6495ED !important;color:#FFF !important;">
+                                    Description
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED !important;color:#FFF !important;">Color
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED !important;color:#FFF !important;" class="text-right">
+                                    Qty
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.move_lines" t-as="move">
+                                <td>
+                                    <span t-esc="move_index+1"/>
+                                </td>
+                                <td>
+                                    <span t-field="move.product_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="move.color_id.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="move.product_qty"/>
+                                    <span t-field="move.product_uom"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div style="float:left;">
+                        <strong>
+                            <span>Remarks :</span>
+                        </strong>
+                        <span t-field="o.note"/>
+                        <br/>
+                        <br/>
+                        <strong>
+                            <span>Confirmed and Accepted By :</span>
+                            <span t-field="o.user_id"/>
+                        </strong>
+                        <br/>
+                        <br/>
+                        <strong>
+                            <span>Signature / Company Chop :</span>
+                        </strong>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div >
+                        <table class="table table-sm" style="float:right;width:700px;" t-if="o.move_line_ids">
+                            <t t-set="has_serial_number" t-value="o.move_line_ids.mapped('lot_id')" groups="stock.group_production_lot"/>
+                            <thead style="border:1px solid black;">
+                                <tr>
+                                    <th style="border:1px solid black;">Date</th>
+                                    <br/>
+                                    <th style="border:1px solid black;" colspan="4">Handled by</th>
+                                </tr>
+                                <tr>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">Carton</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">Bag</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">Bundle</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">Roll</th>
+                                </tr>
+                                <tr>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                    <br/>
+                                    <th style="border:1px solid black;">&amp;nbsp;</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </t>
+            <t t-call="bi_professional_reports_templates.external_layout_standard_inherited">
+                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+                <t t-set="company" t-value="o.company_id"/>
+                    <div class="page">
+                        <div class="header">
+                            <div class="row mt32 mb32">
+                                <div class="col-6" style="font:15px lucida-console,sans-serif !important;">
+                                    <span t-field="o.company_id.partner_id"/>
+                                    <br/>
+                                    <span t-field="o.company_id.partner_id.street"/>
+                                    <br/>
+                                    <span t-field="o.company_id.partner_id.street2"/>
+                                    <br/>
+                                    <span t-field="o.company_id.partner_id.city"/>
+                                    <br/>
+                                    <span t-field="o.company_id.partner_id.phone"/>
+                                    <br/>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="max-height: 90px;"/>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px; background-color: #DCDCDC;">
+                                <div class="oe_structure"/>
+                                <div style="border-bottom: 1px solid grey;"/>
+                                <div style="background-color:#DCDCDC;">
+                                    <div style="float:left;">
+                                        Deliver To/收貨方:
+                                        <br/>
+                                        <span style="float: left;color:#0000;">
+                                            <t t-esc="o.partner_id.name"/>
+                                        </span>
+                                        <br/>
+                                        <span style="float: left;color:#0000;">
+                                            <t t-esc="o.partner_id.street"/>
+                                        </span>
+                                        <br/>
+                                        <span style="float: left;color:#0000;">
+                                            <t t-esc="o.partner_id.street2"/>
+                                        </span>
+                                        <br/>
+                                        <span style="float: left;color:#0000;">
+                                            <t t-esc="o.partner_id.country_id.name"/>
+                                        </span>
+                                        <br/>
+                                        <span style="float: left;color:#0000;">
+                                            <t t-esc="o.partner_id.phone"/>
+                                        </span>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                    <div>
+                                        <div style="float:right;border:1px solid grey;margin-right:30px;width:350px;">
+                                            <div style="background-color:#6495ED !important;color:#FFF !important;">
+                                                <span style="margin-top:5px;">Delivery note:</span>
+                                                <span class="float-right pr-2">
+                                                    <t t-esc="o.name"/>
+                                                </span>&amp;nbsp;
+                                            </div>
+                                            <span>Date/日期:</span>
+                                            <span class="float-right pr-2">
+                                                <t t-esc="o.scheduled_date.strftime('%d/%m/%Y')"/>
+                                            </span>
+                                            <br/>
+                                            <span>Total Ctn/總箱數:</span>
+                                            <t t-set="total_ctn" t-value="0">
+                                                <t t-if="o.lot_id.x_studio_carton_number">
+                                                    <t t-foreach="o.lot_id.x_studio_carton_number">
+                                                        <t t-set="total_ctn" t-value="total_ctn+1"/>
+                                                    </t>
+                                                </t>
+                                            </t>
+                                            <span class="float-right pr-2">
+                                                <t t-esc="total_ctn"/>
+                                            </span>
+                                            <br/>
+                                            <span>Customer reference:</span>
+                                            <span class="float-right pr-2">
+                                                <t t-esc="o.x_studio_customer_reference_"/>
+                                            </span>
+                                            <br/>
+                                            <span>Pages:</span>
+                                            <span class="float-right pr-2">
+                                                <span class="page"/>
+                                                /
+                                                <span class="topage"/>
+                                            </span>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                </div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div style="border-bottom: 1px solid grey;"/>
+                            </div>
+                            <br/>
+                        </div>
+                    <div>
+                        <h4 style="text-align:center;font-color:black;">
+                            <span>PACKING LIST</span>
+                        </h4>
+                    </div>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    Ctn<br/>箱號
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    SO#
+                                    <br/>
+                                    銷售單號
+                                </th>
+                                <th style="width: 110px;text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    Customer Reference
+                                    <br/>
+                                    客戶參考編號
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    Product Category
+                                    <br/>
+                                    貨物種類
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    Item
+                                    <br/>
+                                    貨物編號
+                                </th>
+                                <th style="width: 60px;text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    Color
+                                    <br/>
+                                    顏色
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    Qty
+                                    <br/>
+                                    數量
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;" class="text-center" colspan="2">Details<br/>明細
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    FOC qty<br/>讓碼數
+                                </th>
+                                <th style="width:12px;text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;" class="text-center" colspan="3">Ctn Size<br/>箱尺寸 (cm)
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    G.W<br/>毛重
+                                </th>
+                                <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                    N.W&amp;nbsp;<br/>淨重
+                                </th>
+                            </tr>
+                            <tr>
+                                <th/>
+                                <th/>
+                                <th/>
+                                <th/>
+                                <th/>
+                                <th style="width: 30px;"/>
+                                <th/>
+                                <th/>
+                                <th/>
+                                <th/>
+                                <th style="width: 4px;">L</th>
+                                <th style="width: 4px;">W</th>
+                                <th style="width: 4px;">H</th>
+                                <th/>
+                                <th/>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs.move_line_ids_without_package" t-as="l">
+                                <tr>
+                                    <td>
+                                        <span t-esc="l.lot_id.x_studio_carton_number[:-2] if l.lot_id.x_studio_carton_number else ''"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="l.origin"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="l.picking_id.x_studio_customer_reference_"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="l.product_id.categ_id">
+                                            <span t-field="l.product_id.categ_id.name"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <span t-field="l.product_id.name"/>
+                                    </td>
+                                    <td style="min-width: 30px;">
+                                        <span t-field="l.x_studio_color_1"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="l.qty_done"/>
+                                    </td>
+                                    <td>1x<span t-field="l.lot_id.x_studio_depth_d"/>+1x<span t-field="l.lot_id.x_studio_width_w"/>+1x
+                                        <span t-field="l.lot_id.x_studio_height_h"/>
+                                    </td>
+                                    <td>&amp;nbsp;</td>
+                                    <td>
+                                        <span t-field="l.lot_id.x_studio_foc_qty"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="l.lot_id.x_studio_depth_d"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="l.lot_id.x_studio_width_w"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="l.lot_id.x_studio_height_h"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="l.lot_id.x_studio_gross_weight"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="l.lot_id.x_studio_net_weight"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <th>&amp;nbsp;</th>
+                                <th>&amp;nbsp;</th>
+                                <th>&amp;nbsp;</th>
+                                <th>&amp;nbsp;</th>
+                                <th>&amp;nbsp;</th>
+                                <th>&amp;nbsp;</th>
+                                <th>
+                                    <t t-set="total" t-value="0"/>
+                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                        <t t-set="total" t-value="total+line.qty_done"/>
+                                    </t>
+                                    Total:
+                                    <span t-esc="total"/>
+                                </th>
+                                <th>&amp;nbsp;</th>
+                                <th>&amp;nbsp;</th>
+                                <th>&amp;nbsp;</th>
+                                <!-- <th>&amp;nbsp;</th> -->
+                                <th colspan="3" class="text-center">
+                                    <t t-set="total_cbm" t-value="0"/>
+                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                        <t t-set="total_cbm" t-value="total_cbm+line.lot_id.x_studio_depth_d*line.lot_id.x_studio_width_w*line.lot_id.x_studio_height_h/1000000"/>
+                                    </t>
+                                    Total CBM:
+                                    <br />
+                                    <span t-esc="total_cbm"/>
+                                </th>
+                                <th class="text-left">
+                                    <t t-set="total_gw" t-value="0"/>
+                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                        <t t-set="total_gw" t-value="total_gw+line.lot_id.x_studio_gross_weight"/>
+                                    </t>
+                                    Total:
+                                    <span t-esc="total_gw"/>
+                                </th>
+                                <th class="text-left">
+                                    <t t-set="total_nw" t-value="0"/>
+                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                        <t t-set="total_nw" t-value="total_nw+line.lot_id.x_studio_net_weight"/>
+                                    </t>
+                                    Total:
+                                    <span t-esc="total_nw"/>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <table class="table table-sm">
+                        <thead>
+                            <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                SO#<br/>銷售單號
+                            </th>
+                            <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                Item#<br/>貨物編號
+                            </th>
+                            <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                Color<br/>顏色
+                            </th>
+                            <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                Qty<br/>數量
+                            </th>
+                            <th style="width:10px;text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                FOC qty<br/>讓碼數
+                            </th>
+                            <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                QTY Unit<br/>數量單位
+                            </th>
+                            <th style="text-align:right;background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;">
+                                Ctn#<br/>箱號
+                            </th>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs.move_line_ids_without_package" t-as="l">
+                                <tr>
+                                    <td class="text-right">
+                                        <span t-field="l.origin"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.product_id.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.x_studio_color_1"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.qty_done"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.lot_id.x_studio_foc_qty"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.qty_done"/>
+                                    </td >
+                                    <td class="text-right">
+                                        <span t-esc="l.lot_id.x_studio_carton_number[:-2] if l.lot_id.x_studio_carton_number else ''"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <th/>
+                                <th/>
+                                <th/>
+                                <th/>
+                                <th/>
+
+                                <th class="text-right">
+                                    <t t-set="total" t-value="0"/>
+                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                        <t t-set="total" t-value="total+line.qty_done"/>
+                                    </t>
+                                    Total:
+                                    <span t-esc="total"/>
+                                </th>
+                                <th class="text-right">
+                                    <span>CTN/箱:</span>
+                                    <t t-if="docs.move_line_ids_without_package.mapped('lot_id') and docs.move_line_ids_without_package.mapped('lot_id').mapped('x_studio_carton_number')">
+                                        <t t-set="carton_number" t-value="[float(carten) for carten in docs.move_line_ids_without_package.mapped('lot_id').mapped('x_studio_carton_number')]"/>
+                                        <t t-esc="sum(carton_number)" t-options='{"widget": "float", "precision": 0}' />
+                                    </t>
+                                    <t t-else="">
+                                        0.00
+                                    </t>
+                                </th>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </t>
+
+        </template>
+    </data>
+</odoo>

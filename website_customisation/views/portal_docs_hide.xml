@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Allow updating on noupdate=True records -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                    eval="[('module', '=', 'purchase'), ('name', '=', 'portal_my_home_purchase')]"/>
+        </function>
+        <value eval="{'noupdate': False}"/>
+    </function>
+
+    <record id="purchase.portal_my_home_purchase" model="ir.ui.view">
+        <field name="active">False</field>
+
+    </record>
+    <!-- Revoke noupdate change -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                    eval="[('module', '=', 'purchase'), ('name', '=', 'portal_my_home_purchase')]"/>
+        </function>
+        <value eval="{'noupdate': True}"/>
+    </function>
+
+    <!--  Project  -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                    eval="[('module', '=', 'project'), ('name', '=', 'portal_my_home')]"/>
+        </function>
+        <value eval="{'noupdate': False}"/>
+    </function>
+    <record id="project.portal_my_home" model="ir.ui.view">
+        <field name="active">False</field>
+
+    </record>
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                    eval="[('module', '=', 'project'), ('name', '=', 'portal_my_home')]"/>
+        </function>
+        <value eval="{'noupdate': True}"/>
+    </function>
+    <!--  Signature  -->
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                    eval="[('module', '=', 'sign'), ('name', '=', 'portal_my_home_sign')]"/>
+        </function>
+        <value eval="{'noupdate': False}"/>
+    </function>
+    <record id="sign.portal_my_home_sign" model="ir.ui.view">
+        <field name="active">False</field>
+
+    </record>
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                    eval="[('module', '=', 'sign'), ('name', '=', 'portal_my_home_sign')]"/>
+        </function>
+        <value eval="{'noupdate': True}"/>
+    </function>
+
+</odoo>

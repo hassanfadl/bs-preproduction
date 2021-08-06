@@ -1,0 +1,99 @@
+<odoo>
+    <data>
+        <record id="email_template_quotation_send" model="mail.template">
+            <field name="name">Sales Order: Send by email</field>
+            <field name="model_id" ref="email_template_customisation.model_sale_order"/>
+            <field name="subject">PopuSunLace${object.state in ('draft', 'sent') and (ctx.get('proforma') and 'Proforma' or 'Quotation') or 'Order'}(Ref ${object.name or 'n/a' })</field>
+            <field name="email_from">${(object.user_id.email_formatted or user.email_formatted) | safe}</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        % set doc_name = 'Quotation' if object.state in ('draft', 'sent') else 'order'
+                        Hello,
+                        <br/>
+                        <br/>
+                        % if ctx.get('proforma'):
+                        Pro forma invoice for ${doc_name}
+                        <strong>${object.name}</strong>
+                        % if object.origin:
+                        (with reference: ${object.origin} )
+                        % endif
+                        % else:
+                        ${doc_name}
+                        <strong>${object.name}</strong>
+                        % if object.Down :
+                        (with reference: ${object.origin} )
+                        % endif
+                        is ready for your review.
+                        % if object.order_line:
+                            <table class="table table-sm" border="1">
+                                <thead>
+                                    <tr>
+                                        <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                            class="text-left">
+                                            Description
+                                        </th>
+                                        <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                            class="text-left">Unit price
+                                        </th>
+                                        <th style="background-color:#4456ab !important;color:#FFF !important;"
+                                            class="text-left">
+                                            Tax
+                                        </th>
+                                    </tr>
+                                </thead>
+                                    <tbody class="sale_tbody">
+                                        % for line in object.order_line:
+                                            <tr>
+                                                <td>
+                                                    ${line.name}
+                                                </td>
+                                                <td>
+                                                    ${line.price_unit}
+                                                </td>
+                                                <td>
+                                                    % if line.tax_id:
+                                                        ${line.tax_id[0].amount}
+                                                    % endif
+                                                </td>
+                                            </tr>
+                                        % endfor
+                                    </tbody>
+                            </table>
+                        % endif
+                        % endif
+                        <br/>
+                        <br/>
+                        Do not hesitate to contact us if you have any questions.
+                        <br/>
+                        <br/>
+                        Regards from POPUSUNLACE
+                        <br/>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template" ref="sale.action_report_saleorder"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <record id="email_compose_message_wizard_form_inherit"
+                model="ir.ui.view">
+            <field name="name">mail_compose_message_form_inherit_form_view
+            </field>
+            <field name="model">mail.compose.message</field>
+            <field name="inherit_id"
+                   ref="mail.email_compose_message_wizard_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='email_from']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('composition_mode', '=', 'mass_mail')]}</attribute>
+                </xpath>
+                <label for="partner_ids" position="replace">
+                    <label for="partner_ids" string="To"/>
+                </label>
+            </field>
+        </record>
+    </data>
+</odoo>

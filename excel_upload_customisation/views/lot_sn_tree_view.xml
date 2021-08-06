@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="view_production_lot_view_tree_inherit" model="ir.ui.view">
+            <field name="name">stock.production.lot.tree.inherit.product.expiry</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="x_studio_carton_number"/>
+                </xpath>
+                <xpath expr="//field[@name='x_studio_carton_number']" position="after">
+                    <field name="sale_order_ids"/>
+                    <field name="purchase_order_ids"/>
+                    <field name="supplier_id"/>
+                    <field name="x_studio_color"/>
+                    <field name="product_qty"/>
+                    <field name="x_studio_foc_qty"/>
+                    <field name="x_studio_depth_d"/>
+                    <field name="x_studio_width_w"/>
+                    <field name="x_studio_height_h"/>
+                    <field name="x_studio_gross_weight"/>
+                    <field name="x_studio_net_weight"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="stock_production_lot_view_form" model="ir.ui.view">
+            <field name="name">stock.production.lot.view.form</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="cbm"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
