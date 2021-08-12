@@ -29,10 +29,23 @@ class StockPicking(models.Model):
             # channels = self.env['sale.order'].search([('name', '=', record.x_studio_order_reference)])
             # cust = channels.partner_id
             # self.x_studio_customer_reference_ = cust.name
-            channel = self.env['sale.order'].search([('name', '=', record.x_studio_order_reference)], limit=1)
-            if not channel:
-                channel = self.env['sale.order'].search([('name', '=', record.origin)], limit=1)
-            record.x_studio_customer_reference_ = channel.client_order_ref
+            if record.sale_ids:
+                client_order_ref = ''
+                for rec in record.sale_ids:
+                    if rec.origin:
+                        if client_order_ref:
+                            client_order_ref += ', '
+                        client_order_ref = rec.origin
+                    else:
+                        if client_order_ref:
+                            client_order_ref += ', '
+                        client_order_ref += rec.client_order_ref
+                record.x_studio_customer_reference_ = client_order_ref
+            else:
+                channel = self.env['sale.order'].search([('name', '=', record.x_studio_order_reference)], limit=1)
+                if not channel:
+                    channel = self.env['sale.order'].search([('name', '=', record.origin)], limit=1)
+                record.x_studio_customer_reference_ = channel.client_order_ref
 
     def compute_related_po_so(self):
         for record in self:

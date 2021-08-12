@@ -387,7 +387,8 @@
                                         <span t-esc="l.lot_id.x_studio_carton_number[:-2] if l.lot_id.x_studio_carton_number else ''"/>
                                     </td>
                                     <td>
-                                        <span t-field="l.origin"/>
+                                        <!-- <span t-field="l.origin"/> -->
+                                        <span t-field="l.picking_id.origin"/>
                                     </td>
                                     <td>
                                         <span t-field="l.picking_id.x_studio_customer_reference_"/>
@@ -401,7 +402,7 @@
                                         <span t-field="l.product_id.name"/>
                                     </td>
                                     <td style="min-width: 30px;">
-                                        <span t-field="l.x_studio_color_1"/>
+                                        <span t-field="l.move_id.color_id.name"/>
                                     </td>
                                     <td>
                                         <span t-field="l.qty_done"/>
@@ -506,13 +507,13 @@
                             <t t-foreach="docs.move_line_ids_without_package" t-as="l">
                                 <tr>
                                     <td class="text-right">
-                                        <span t-field="l.origin"/>
+                                        <span t-field="l.picking_id.origin"/>
                                     </td>
                                     <td class="text-right">
                                         <span t-field="l.product_id.name"/>
                                     </td>
                                     <td class="text-right">
-                                        <span t-field="l.x_studio_color_1"/>
+                                        <span t-field="l.move_id.color_id.name"/>
                                     </td>
                                     <td class="text-right">
                                         <span t-field="l.qty_done"/>
