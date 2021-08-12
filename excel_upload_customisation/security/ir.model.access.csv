@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_invoice_lots_all,production.lot.wizard.all,model_production_lot_wizard,,1,1,1,1,
+access_invoice_lots_all,production.lot.wizard.all,model_production_lot_wizard,,1,1,1,1
+access_excel_tolerance_wizard,access_excel_tolerance_wizard,model_excel_tolerance_wizard,,1,1,1,1

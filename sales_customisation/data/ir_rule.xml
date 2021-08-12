@@ -32,7 +32,7 @@
         <record id="customer_user_rule_internal_user" model="ir.rule">
             <field name="name">Customer User Rule Internal</field>
             <field name="model_id" ref="base.model_res_partner"/>
-            <field name="domain_force">['|', ('accessible_user_id', '=', user.id), ('id', 'in', [user.partner_id.id, 2])]</field>
+            <field name="domain_force">['|', '|', ('accessible_user_id', '=', user.id), ('id', 'in', [user.partner_id.id, 2]), ('id', 'in', user.company_ids.partner_id.ids)]</field>
             <field name="groups" eval="[(4, ref('group_customer_user'))]"/>
         </record>
 

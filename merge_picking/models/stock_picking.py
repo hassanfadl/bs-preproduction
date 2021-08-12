@@ -5,6 +5,8 @@ import time
 from odoo import api, fields, models, _
 # import odoo.addons.decimal_precision as dp
 from odoo.exceptions import UserError, RedirectWarning, ValidationError, Warning
+from operator import itemgetter
+from odoo.tools import groupby
 from odoo.tools.float_utils import float_compare, float_is_zero, float_round
 
 
@@ -51,6 +53,19 @@ class StockPicking(models.Model):
         for record in self:
             channel = self.env['purchase.order'].search([('origin', '=', record.origin)], limit=1)
             record.x_studio_so = channel.name
+
+    def button_validate(self):
+        for record in self:
+            if record.picking_type_id.code == 'incoming' and record.move_ids_without_package.mapped('move_dest_ids'):
+                moves = groupby(record.move_ids_without_package, itemgetter('move_dest_ids'))
+                for move in moves:
+                    managed_qty = move[0].product_uom_qty * move[0].tolerance_rate / 100
+                    total_done_qty = 0
+                    for po_move in move[1]:
+                        total_done_qty += po_move.quantity_done
+                    if total_done_qty >= move[0].product_uom_qty + managed_qty:
+                        move[0].write({'product_uom_qty': move[0].product_uom_qty + managed_qty})
+        return super(StockPicking, self).button_validate()
 
     def button_validate_new(self):
 

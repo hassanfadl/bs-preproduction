@@ -25,6 +25,20 @@ class ImportLots(models.TransientModel):
         po_no = [row[1] for row in rows]
         purchase_order = self.env['purchase.order'].search([('name', 'in', po_no)])
         move_ids = purchase_order.picking_ids.mapped('move_ids_without_package').filtered(lambda x: x.state not in ['done', 'cancel'])
+        if 'confirm_excel' not in self.env.context:
+            for row in rows:
+                moves = move_ids.filtered(lambda mid: mid.origin and mid.product_id.name == row[3])
+                for move in moves:
+                    managed_quantity = move.product_uom_qty * move.tolerance_rate / 100
+                    done_qty = move.quantity_done + managed_quantity + row[5]
+                    if done_qty > move.product_uom_qty + managed_quantity:
+                        return {'type': 'ir.actions.act_window',
+                                'name': _('Tolerance Checking'),
+                                'res_model': 'excel.tolerance.wizard',
+                                'target': 'new',
+                                'view_mode': 'form',
+                                'context': {'excel_upload': self.id}
+                                }
         for row in rows:
             moves = move_ids.filtered(lambda mid: mid.origin and mid.product_id.name == row[3])
             row_count = 0
@@ -71,6 +85,7 @@ class ImportLots(models.TransientModel):
                 })
         move_ids.write({'is_checked': False})
         purchase_order.mapped("picking_ids").button_validate()
+        return False
 
     def confirmation_msg(self):
         fp = tempfile.NamedTemporaryFile(delete=False, suffix=".xlsx")
@@ -94,14 +109,17 @@ class ImportLots(models.TransientModel):
                     'target': 'new'
                 }
 
-        self.action_import_lots()
-        message = {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': _('Success!'),
-                'message': 'Importing Completed Successfully',
-                'sticky': False,
+        import_lots = self.action_import_lots()
+        if not import_lots:
+            message = {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': _('Success!'),
+                    'message': 'Importing Completed Successfully',
+                    'next': {'type': 'ir.actions.act_window_close'},
+                }
             }
-        }
-        return message
+            return message
+        else:
+            return import_lots

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="excel_tolerence_checking_action" model="ir.actions.act_window">
+            <field name="name">Tolerence checking wizard</field>
+            <field name="res_model">excel.tolerance.wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="excel_tolerence_checking_wizard" model="ir.ui.view">
+            <field name="name">excel.tolerence.wizard</field>
+            <field name="model">excel.tolerance.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <p>The received quantity is above than the tolerance acceptance percentage, Do you want to continue?</p>
+                    <footer>
+                        <button string="Continue" type="object" class="btn btn-primary" name="continue_validate"/>
+                        <button string="No" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -17,6 +17,7 @@
         'security/ir.model.access.csv',
         'views/lot_sn_tree_view.xml',
         'views/importing.xml',
+        'wizard/check_excel_tolerance_wizard_view.xml'
     ],
     'demo': [
     ],

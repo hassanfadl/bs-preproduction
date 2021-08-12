@@ -104,7 +104,8 @@
 
                         </div>
                     </div>
-                    <h3 style="text-align: center; font-color: black;">
+                    <br/>
+                    <h2 style="text-align: center; font-color: black;">
                         <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
                             <span t-if="doc.state not in ['draft','sent']">SALES ORDER</span>
                             <span t-if="doc.state in ['draft','sent']">QUOTATION</span>
@@ -112,7 +113,8 @@
                         <t t-if="env.context.get('proforma', False) or is_pro_forma">
                             <span>Pro-Forma Invoice</span>
                         </t>
-                    </h3>
+                    </h2>
+                    <br/>
                     <!-- <table class="position-absolute table table-sm">
                         <thead>
                             <tr>
@@ -130,7 +132,7 @@
                             </tr>
                         </thead>
                     </table> -->
-                    <table class="table table-sm"  >
+                    <table class="table table-sm">
                         <thead>
                             <tr>
                                 <th style="text-align: center; background-color:#6495ED  !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">
@@ -148,12 +150,27 @@
                                     <th style="text-align: center; background-color:#6495ED !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">Tolerance
                                     </th>
                                 </t>
-                                <th style="text-align: center; background-color:#6495ED !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">Unit price (HK$)
+                                <th style="text-align: center; background-color:#6495ED !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">
+                                  <t t-set="price" t-value="doc.pricelist_id.name"/>  
+                                  <t t-if="price == 'Public Pricelist'">
+                                    Unit price (HK$)
+                                  </t>
+                                  <t t-if="price == 'Default CNY pricelist'">
+                                    Unit price (CN¥)
+                                  </t>
                                 </th>
-                                <th style="text-align: left; background-color:#6495ED !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important;width:120px ">Tax %
+                                <th style="text-align: center; background-color:#6495ED !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; width:120px">Tax %
                                 </th>
                                 <t t-if="doc.state not in ['draft','sent']">
-                                    <th style="text-align: center; background-color:#6495ED !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">Amount (HK$)
+                                    <th style="text-align: center; background-color:#6495ED !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">
+                                      <t t-set="price" t-value="doc.pricelist_id.name"/>  
+                                      <t t-if="price == 'Public Pricelist'">
+                                        Amount (HK$)
+                                      </t>
+                                      <t t-if="price == 'Default CNY pricelist'">
+                                        Amount (CN¥)
+                                      </t>
+                                      
                                     </th>
                                 </t>
                             </tr>
@@ -235,19 +252,23 @@
                                                         </t>
                                                     </t>
                                                     <br/>
-                                                    <span t-if="l.name=='MCQ'"/>
-                                                    MCQ :
-                                                    <t t-foreach="l.product_id.product_template_attribute_value_ids" t-as="m">
-                                                        <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'MCQ')">
-                                                            <span t-field="m.name"/>
-                                                        </t>
-                                                    </t>
-                                                    <br/>
                                                     <span t-if="l.name=='MOQ'"/>
                                                     MOQ :
                                                     <t t-foreach="l.product_id.product_template_attribute_value_ids" t-as="m">
                                                         <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'MOQ')">
                                                             <span t-field="m.name"/>
+                                                        </t>
+                                                    </t>
+                                                    <br/>
+                                                    <span t-if="l.name=='Absolute MOQ with surcharge'"/>
+                                                    Absolute MOQ with surcharge :
+                                                    <t t-set="foo" t-value="False"/>
+                                                    <t t-foreach="l.product_id.product_template_attribute_value_ids" t-as="m">
+                                                        <t t-if="foo == False">
+                                                        <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'Absolute MOQ with surcharge')">
+                                                            <span t-field="m.name"/>
+                                                            <t t-set="foo" t-value="True"/>
+                                                        </t>
                                                         </t>
                                                     </t>
                                                     <br/>
@@ -297,32 +318,40 @@
                                                         </t>
                                                     </t>
                                                     <br/>
-                                                    <span t-if="l.name=='Absolute MCQ with surcharge'"/>
-                                                    Absolute MCQ with surcharge :
+                                                    <span t-if="l.name=='MCQ'"/>
+                                                    MCQ :
                                                     <t t-foreach="l.product_id.product_template_attribute_value_ids" t-as="m">
-                                                        <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'Absolute MCQ with surcharge')">
+                                                        <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'MCQ')">
                                                             <span t-field="m.name"/>
                                                         </t>
                                                     </t>
                                                     <br/>
-                                                    <span t-if="l.name=='Absolute MOQ with surcharge'"/>
-                                                    Absolute MOQ with surcharge :
+                                                    <span t-if="l.name=='Absolute MCQ with surcharge'"/>
+                                                    Absolute MCQ with surcharge :
+                                                    <!--here-->
+                                                    <t t-set="foo" t-value="0"/>
                                                     <t t-foreach="l.product_id.product_template_attribute_value_ids" t-as="m">
-                                                        <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'Absolute MOQ with surcharge')">
-                                                            <span t-field="m.name"/>
+                                                        <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'Absolute MCQ with surcharge')">
+
+                                                          <span t-field="m.name"/>
                                                         </t>
                                                     </t>
                                                     <br/>
                                                     <span t-if="l.name=='Leadtime without stock'"/>
                                                     Leadtime without stock :
-                                                    <t t-foreach="l.product_id.product_template_attribute_value_ids" t-as="m">
-                                                        <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'Leadtime without stock')">
-                                                            <span t-field="m.name"/>
-                                                        </t>
+                                                    <t t-set="foo" t-value="False"/>
+                                                      <t t-foreach="l.product_id.product_template_attribute_value_ids" t-as="m">
+                                                          <t t-if="foo == False">
+                                                          <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'Leadtime without stock')">
+                                                              <span t-field="m.name"/>
+                                                              <t t-set="foo" t-value="True"/>
+                                                          </t>
+                                                          </t>
+        
                                                     </t>
                                                     <br/>
-                                                    <span t-if="l.name=='Leadtime without greige'"/>Leadtime without
-                                                    greige :
+                                                    <span t-if="l.name=='Leadtime without greige'"/>
+                                                    Leadtime without greige :
                                                     <t t-foreach="l.product_id.product_template_attribute_value_ids" t-as="m">
                                                         <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'Leadtime without greige')">
                                                             <span t-field="m.name"/>
@@ -343,22 +372,22 @@
                                             <t t-foreach="l.product_id.product_template_attribute_value_ids" t-as="m">
                                                 <t t-if="m.attribute_id.check_report_values(doc.partner_id, 'Composition')">
                                                     <span t-field="m.name"/>
-                                                     <br/> 
                                                 </t>
                                             </t>
                                         </th>
-
                                     </tr>
-
                                 </t>
                             </t>
-
+                          
                         </tbody>
                     </table>
                     <br/>
 
-
-                    <t t-if="doc.state not in ['draft','sent']" >
+                    <div t-if="doc.state in ['draft','sent']" >
+                      <p style="page-break-after: always;"></p>  
+                    </div>
+                    
+                    <t t-if="doc.state not in ['draft','sent']">
                         <div name="total">
                             <div class="col-xs-4 pull-right">
                                 <table class="table table-condensed">
@@ -397,7 +426,7 @@
                         <br/>
                     </t>
                     <div t-if="doc.state not in ['draft','sent']" style="page-break-after: always;">
-                        <span>Product specification</span>
+                        <span >Product specification</span>
                         <table class="table table-sm">
                             <thead>
                                 <tr>
@@ -524,7 +553,7 @@
                     <div>
                         <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
                             <span t-if="doc.state not in ['draft','sent']">
-                                <div  >
+                                <div>
                                     <div class="col-xs-6">
                                         <strong>Bank Account Details</strong>
                                         <br/>
