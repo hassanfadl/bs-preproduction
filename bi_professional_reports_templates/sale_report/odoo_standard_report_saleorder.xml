@@ -561,25 +561,25 @@
                                         <span/>
                                         <br/>
                                         <span>Advising Bank:</span>
-                                        <span t-field="doc.partner_id.bank_ids.bank_id.name"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids" t-field="doc.company_id.partner_id.bank_ids[0].bank_id.name"/>
                                         <br/>
                                         <span>Account Name :</span>
-                                        <span t-field="doc.partner_id.bank_ids.acc_holder_name"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].acc_holder_name" t-field="doc.company_id.partner_id.bank_ids[0].acc_holder_name"/>
                                         <br/>
                                         <span>Account No :</span>
-                                        <span t-field="doc.partner_id.bank_ids.acc_number"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].acc_number" t-field="doc.company_id.partner_id.bank_ids[0].acc_number"/>
                                         <br/>
                                         <span>Bank Address :</span>
-                                        <span t-field="doc.partner_id.bank_ids.branch_name"/>
-                                        <span t-field="doc.partner_id.bank_ids.street"/>
-                                        <span t-field="doc.partner_id.bank_ids.street2"/>
-                                        <span t-field="doc.partner_id.bank_ids.city"/>
-                                        <span t-field="doc.partner_id.bank_ids.zip"/>
-                                        <span t-field="doc.partner_id.bank_ids.state_id"/>
-                                        <span t-field="doc.partner_id.bank_ids.country_id"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].branch_name" t-field="doc.company_id.partner_id.bank_ids[0].branch_name"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].street" t-field="doc.company_id.partner_id.bank_ids[0].street"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].street2" t-field="doc.company_id.partner_id.bank_ids[0].street2"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].city" t-field="doc.company_id.partner_id.bank_ids[0].city"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].zip" t-field="doc.company_id.partner_id.bank_ids[0].zip"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].state_id" t-field="doc.company_id.partner_id.bank_ids[0].state_id"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].country_id" t-field="doc.company_id.partner_id.bank_ids[0].country_id"/>
                                         <br/>
                                         <span>Swift:</span>
-                                        <span t-field="doc.partner_id.bank_ids.swift_code"/>
+                                        <span t-if="doc.company_id.partner_id.bank_ids and doc.company_id.partner_id.bank_ids[0].swift_code" t-field="doc.company_id.partner_id.bank_ids[0].swift_code"/>
                                         <br/>
                                     </div>
                                 </div>
