@@ -36,7 +36,7 @@ class StockPicking(models.Model):
                         if client_order_ref:
                             client_order_ref += ', '
                         client_order_ref = rec.origin
-                    else:
+                    elif rec.client_order_ref:
                         if client_order_ref:
                             client_order_ref += ', '
                         client_order_ref += rec.client_order_ref
