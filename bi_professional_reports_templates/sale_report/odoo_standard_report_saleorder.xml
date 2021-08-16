@@ -152,10 +152,10 @@
                                 </t>
                                 <th style="text-align: center; background-color:#6495ED !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">
                                   <t t-set="price" t-value="doc.pricelist_id.name"/>  
-                                  <t t-if="price == 'Public Pricelist'">
+                                  <t t-if="price == 'HKD'">
                                     Unit price (HK$)
                                   </t>
-                                  <t t-if="price == 'Default CNY pricelist'">
+                                  <t t-if="price == 'CNY'">
                                     Unit price (CN¥)
                                   </t>
                                 </th>
@@ -164,10 +164,10 @@
                                 <t t-if="doc.state not in ['draft','sent']">
                                     <th style="text-align: center; background-color:#6495ED !important;border: 1px !important; border-style: solid !important; border-color: #fff; color:#fff !important; ">
                                       <t t-set="price" t-value="doc.pricelist_id.name"/>  
-                                      <t t-if="price == 'Public Pricelist'">
+                                      <t t-if="price == 'HKD'">
                                         Amount (HK$)
                                       </t>
-                                      <t t-if="price == 'Default CNY pricelist'">
+                                      <t t-if="price == 'CNY'">
                                         Amount (CN¥)
                                       </t>
                                       
@@ -383,8 +383,8 @@
                     </table>
                     <br/>
 
-                    <div t-if="doc.state in ['draft','sent']" >
-                      <p style="page-break-after: always;"></p>  
+                    <div t-if="doc.state in ['draft','sent']">
+                      <p style="page-break-after: always;"/>  
                     </div>
                     
                     <t t-if="doc.state not in ['draft','sent']">
@@ -426,7 +426,7 @@
                         <br/>
                     </t>
                     <div t-if="doc.state not in ['draft','sent']" style="page-break-after: always;">
-                        <span >Product specification</span>
+                        <span>Product specification</span>
                         <table class="table table-sm">
                             <thead>
                                 <tr>
@@ -531,7 +531,7 @@
                         </span>
                     </div>
                     <br/>
-                    <div >
+                    <div>
                         <strong>
                             <span>Remarks :</span>
                         </strong>
@@ -543,7 +543,7 @@
                         </strong>
                         <span t-field="doc.payment_term_id"/>
                     </div>
-                    <div >
+                    <div>
                         <strong>
                             <span>Terms and conditions :</span>
                         </strong>

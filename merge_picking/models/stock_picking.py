@@ -19,6 +19,7 @@ class StockPicking(models.Model):
     x_studio_order_reference = fields.Char('Sale Order', compute='get_values', readonly=True)
     x_studio_customer_reference_ = fields.Char('Customer Name', compute='get_data', readonly=True)
     x_studio_so = fields.Char('Related Order (PO/SO)', compute='compute_related_po_so')
+    last_backorder_move_ids = fields.Many2many('stock.move', string='Last Backorders')
 
     def get_values(self):
         for record in self:
@@ -55,7 +56,12 @@ class StockPicking(models.Model):
             record.x_studio_so = channel.name
 
     def button_validate(self):
+        validate_picking = {}
         for record in self:
+            move_id = self.env['stock.move'].search([('picking_id', '=', record.id)])
+            if move_id:
+                validate_picking.update({record.id: move_id.filtered(lambda mid: mid.state not in ['cancel', 'done']).ids})
+                # moves_list.extend(move_id.filtered(lambda mid: mid.state not in ['cancel', 'done']).ids)
             if record.picking_type_id.code == 'incoming' and record.move_ids_without_package.mapped('move_dest_ids'):
                 moves = groupby(record.move_ids_without_package, itemgetter('move_dest_ids'))
                 for move in moves:
@@ -65,7 +71,12 @@ class StockPicking(models.Model):
                         total_done_qty += po_move.quantity_done
                     if total_done_qty >= move[0].product_uom_qty + managed_qty:
                         move[0].write({'product_uom_qty': move[0].product_uom_qty + managed_qty})
-        return super(StockPicking, self).button_validate()
+        res = super(StockPicking, self).button_validate()
+        if isinstance(res, bool) and validate_picking:
+            for record in self:
+                if record.id in validate_picking:
+                    record.write({'last_backorder_move_ids': [(6, 0, validate_picking[record.id])]})
+        return res
 
     def button_validate_new(self):
 

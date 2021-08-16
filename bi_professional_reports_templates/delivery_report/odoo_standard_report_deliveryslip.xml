@@ -119,7 +119,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr t-foreach="o.move_lines" t-as="move">
+                            <tr t-foreach="o.last_backorder_move_ids" t-as="move">
                                 <td>
                                     <span t-esc="move_index+1"/>
                                 </td>
@@ -381,7 +381,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <t t-foreach="docs.move_line_ids_without_package" t-as="l">
+                            <t t-foreach="o.last_backorder_move_ids.move_line_ids" t-as="l">
+                                <!-- _without_package.filtered(lambda l: l.state == 'done') -->
                                 <tr>
                                     <td>
                                         <span t-esc="l.lot_id.x_studio_carton_number[:-2] if l.lot_id.x_studio_carton_number else ''"/>
@@ -440,7 +441,7 @@
                                 <th>&amp;nbsp;</th>
                                 <th>
                                     <t t-set="total" t-value="0"/>
-                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                    <t t-foreach="o.last_backorder_move_ids.move_line_ids" t-as="line">
                                         <t t-set="total" t-value="total+line.qty_done"/>
                                     </t>
                                     Total:
@@ -452,7 +453,7 @@
                                 <!-- <th>&amp;nbsp;</th> -->
                                 <th colspan="3" class="text-center">
                                     <t t-set="total_cbm" t-value="0"/>
-                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                    <t t-foreach="o.last_backorder_move_ids.move_line_ids" t-as="line">
                                         <t t-set="total_cbm" t-value="total_cbm+line.lot_id.x_studio_depth_d*line.lot_id.x_studio_width_w*line.lot_id.x_studio_height_h/1000000"/>
                                     </t>
                                     Total CBM:
@@ -461,7 +462,7 @@
                                 </th>
                                 <th class="text-left">
                                     <t t-set="total_gw" t-value="0"/>
-                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                    <t t-foreach="o.last_backorder_move_ids.move_line_ids" t-as="line">
                                         <t t-set="total_gw" t-value="total_gw+line.lot_id.x_studio_gross_weight"/>
                                     </t>
                                     Total:
@@ -469,7 +470,7 @@
                                 </th>
                                 <th class="text-left">
                                     <t t-set="total_nw" t-value="0"/>
-                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                    <t t-foreach="o.last_backorder_move_ids.move_line_ids" t-as="line">
                                         <t t-set="total_nw" t-value="total_nw+line.lot_id.x_studio_net_weight"/>
                                     </t>
                                     Total:
@@ -504,7 +505,7 @@
                             </th>
                         </thead>
                         <tbody>
-                            <t t-foreach="docs.move_line_ids_without_package" t-as="l">
+                            <t t-foreach="o.last_backorder_move_ids.move_line_ids" t-as="l">
                                 <tr>
                                     <td class="text-right">
                                         <span t-field="l.picking_id.origin"/>
@@ -538,7 +539,7 @@
 
                                 <th class="text-right">
                                     <t t-set="total" t-value="0"/>
-                                    <t t-foreach="docs.move_line_ids_without_package" t-as="line">
+                                    <t t-foreach="o.last_backorder_move_ids.move_line_ids" t-as="line">
                                         <t t-set="total" t-value="total+line.qty_done"/>
                                     </t>
                                     Total:
@@ -546,8 +547,8 @@
                                 </th>
                                 <th class="text-right">
                                     <span>CTN/箱:</span>
-                                    <t t-if="docs.move_line_ids_without_package.mapped('lot_id') and docs.move_line_ids_without_package.mapped('lot_id').mapped('x_studio_carton_number')">
-                                        <t t-set="carton_number" t-value="[float(carten) for carten in docs.move_line_ids_without_package.mapped('lot_id').mapped('x_studio_carton_number')]"/>
+                                    <t t-if="o.last_backorder_move_ids.move_line_ids.mapped('lot_id') and o.last_backorder_move_ids.move_line_ids.mapped('lot_id').mapped('x_studio_carton_number')">
+                                        <t t-set="carton_number" t-value="[float(carten) for carten in o.last_backorder_move_ids.move_line_ids.mapped('lot_id').mapped('x_studio_carton_number')]"/>
                                         <t t-esc="sum(carton_number)" t-options='{"widget": "float", "precision": 0}' />
                                     </t>
                                     <t t-else="">

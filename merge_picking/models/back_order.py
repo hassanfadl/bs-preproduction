@@ -45,6 +45,7 @@ class StockBackorderConfirmation(models.TransientModel):
     def create_selected_backorder(self):
         confirmation_line = self.backorder_confirmation_line_id.filtered(lambda l:l.to_process_backorder)
         products = confirmation_line.mapped('product_id')
+        moves_list = []
         for product in products:
             for prd in confirmation_line:
                 print(prd.product_id,"prd")
@@ -53,6 +54,8 @@ class StockBackorderConfirmation(models.TransientModel):
             pick_id = product_line.mapped('picking_id')
             move_id = self.env['stock.move'].search([('picking_id','=',pick_id[0].id),('product_id','=',product.id)])
             # .filtered(lambda l:l.product_uom_qty != l.quantity_done)
+            if move_id:
+                moves_list.extend(move_id.filtered(lambda mid: mid.state not in ['cancel', 'done']).ids)
             demand = 0
             done = 0
             for move in move_id:
@@ -77,6 +80,9 @@ class StockBackorderConfirmation(models.TransientModel):
             }
             new_mo = Stock_move.create(vals)
             new_mo._action_confirm()
+
+        pick_backorder_id = product_line.mapped('picking_id')
+        pick_backorder_id.write({'last_backorder_move_ids': [(6, 0, moves_list)]})
         return True
 
     def process_cancel_backorder(self):
