@@ -62,27 +62,42 @@ class StockBackorderConfirmation(models.TransientModel):
 
                 demand += move.product_uom_qty
                 done += move.quantity_done
-                move._action_done(True)
+                if done != 0:
+                    move._action_done(True)
             pick_id.move_ids_without_package.filtered(lambda mid: mid.state == 'cancel' and mid.quantity_done == 0).unlink()
             Stock_move = self.env['stock.move']
-            vals = {
-                'product_id': product.id,
-                'name': product.name,
-                'origin': move_id[0].origin,
-                'location_id': move_id[0].location_id.id,
-                'location_dest_id': move_id[0].location_dest_id.id,
-                'product_uom': move_id[0].product_uom.id,
-                'product_uom_qty': demand - done,
-                'price_unit': move_id[0].price_unit,
-                'picking_id': pick_id[0].id,
-                'color_id': move_id[0].color_id and move_id[0].color_id.id,
-                'move_dest_ids': move_id[0].move_dest_ids and [(6, 0, move_id[0].move_dest_ids.ids)]
-            }
-            new_mo = Stock_move.create(vals)
-            new_mo._action_confirm()
+            if move_id.exists() and done != 0:
+                vals = {
+                    'product_id': product.id,
+                    'name': product.name,
+                    'origin': move_id[0].origin,
+                    'location_id': move_id[0].location_id.id,
+                    'location_dest_id': move_id[0].location_dest_id.id,
+                    'product_uom': move_id[0].product_uom.id,
+                    'product_uom_qty': demand - done,
+                    'picking_type_id': pick_id[0].picking_type_id.id,
+                    'price_unit': move_id[0].price_unit,
+                    'picking_id': pick_id[0].id,
+                    'color_id': move_id[0].color_id and move_id[0].color_id.id,
+                    'move_dest_ids': move_id[0].move_dest_ids and [(6, 0, move_id[0].move_dest_ids.ids)]
+                }
+                new_mo = Stock_move.create(vals)
+                if pick_id[0].picking_type_id.code == 'outgoing':
+                    po_receipt_id = self.env['stock.picking'].search([('group_id', '=', pick_id[0].group_id.id)]).filtered(lambda pid: pid.picking_type_id.code == 'incoming')
+                    po_move_id = po_receipt_id.move_ids_without_package.filtered(lambda mid: mid.product_id.id == product.id and mid.state not in ['done', 'cancel'])
+                    po_move_id.write({'move_dest_ids': [(6, 0, new_mo.ids)]})
+                elif pick_id[0].picking_type_id.code == 'incoming':
+                    so_delivery_id = self.env['stock.picking'].search([('group_id', '=', pick_id[0].group_id.id)]).filtered(lambda pid: pid.picking_type_id.code == 'outgoing')
+                    so_move_id = so_delivery_id.move_ids_without_package.filtered(lambda mid: mid.product_id.id == product.id and mid.state not in ['done', 'cancel'])
+                    new_mo.write({'move_dest_ids': [(6, 0, so_move_id.ids)]})
+                new_mo._action_confirm()
+            delete_lines = pick_id.move_ids_without_package.filtered(lambda mid: mid.product_id.id == product.id and mid.product_uom_qty <= 0)
+            delete_lines._action_cancel()
+            delete_lines.unlink()
 
         pick_backorder_id = product_line.mapped('picking_id')
-        pick_backorder_id.write({'last_backorder_move_ids': [(6, 0, moves_list)]})
+        exist_records = self.env['stock.move'].browse(moves_list).exists()
+        pick_backorder_id.write({'last_backorder_move_ids': [(6, 0, exist_records.ids)]})
         return True
 
     def process_cancel_backorder(self):
